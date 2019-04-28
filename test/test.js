@@ -184,7 +184,6 @@ describe('Subslot', () => {
 			template: `
 				<div class="card">
 					<div class="card-header">
-						<!-- Pick out the Card Header from the default slot -->
 						<subslot
 							name="cardHeader"
 							@no-match="onNoCardHeader"
@@ -216,6 +215,39 @@ describe('Subslot', () => {
 
 		const wrapper = mount(usage);
 		expect(onNoCardHeader).toBeCalled();
+		expect(wrapper.element).toMatchSnapshot();
+	});
+
+	test('Should use fallback', () => {
+		const Card = {
+			template: `
+				<div class="card">
+					<div class="card-header">
+						<subslot name="cardHeader">
+							Fallback
+						</subslot>
+					</div>
+				</div>
+			`,
+
+			components: {
+				Subslot,
+				CardHeader,
+			},
+
+			computed: {
+				...Subslot.slots({
+					cardHeader: '@CardHeader:1',
+				}),
+			},
+		};
+
+		const usage = {
+			template: '<card>Content</card>',
+			components: { Card },
+		};
+
+		const wrapper = mount(usage);
 		expect(wrapper.element).toMatchSnapshot();
 	});
 });

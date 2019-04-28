@@ -1,8 +1,7 @@
+const remove = (arr, el) => arr.splice(arr.indexOf(el), 1);
+
 const getVnodes = (ctx) => {
 	if (ctx.props.vnodes) { return ctx.props.vnodes; }
-
-	const slots = ctx.slots();
-	if (slots.default) { return slots.default; }
 
 	const { default: defaultSlot } = ctx.parent.$slots;
 	if (defaultSlot) { return defaultSlot; }
@@ -120,6 +119,8 @@ export default {
 
 		if (!vnodes || vnodes.length === 0) {
 			emit(ctx, 'no-match');
+
+			return ctx.slots().default;
 		}
 
 		return vnodes;
@@ -129,9 +130,11 @@ export default {
 	slots(def) {
 		return {
 			$subslots() {
+				console.assert(this.$slots, 'Subslot.slots() must be spread into the `computed` hash of the component.');
+
 				const { default: defaultSlot } = this.$slots;
 
-				return Object.keys(def).reduce((slots, name) => {
+				const subslots = Object.keys(def).reduce((slots, name) => {
 					const slotDef = def[name];
 
 					const vnodes = filterVnodes({
@@ -140,9 +143,7 @@ export default {
 						vm: this,
 					});
 
-					for (let vn of vnodes) {
-						slots.default.splice(slots.default.indexOf(vn), 1);
-					}
+					vnodes.forEach(vn => remove(slots.default, vn));
 
 					if (vnodes.length) {
 						slots[name] = vnodes;
@@ -152,6 +153,8 @@ export default {
 				}, {
 					default: defaultSlot.slice(0),
 				});
+
+				return subslots;
 			},
 		};
 	},
