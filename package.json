@@ -17,7 +17,9 @@
     "dev": "webpack --watch",
     "test": "jest"
   },
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "main": "dist/Subslot.js",
   "devDependencies": {
     "@babel/core": "^7.4.4",
