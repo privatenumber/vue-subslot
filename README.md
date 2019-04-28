@@ -71,7 +71,7 @@ export default {
 ```
 
 ### Defining Subslots
-Alternatively to using inline filter attriburtes, you can delegate subslot definition to the component. With this syntax, you can access subslots like you would normal slots but via `$subslots`. This is what _Card.vue_ would look like.
+Alternatively to using inline filter attributes, you can define subslots on the component. With this approach, you can access subslots like you would normal slots but via `$subslots`. This is what _Card.vue_ would look like.
 ```vue
 <template>
 	<div class="card">
@@ -109,7 +109,7 @@ export default {
 			// Or an object filter
 			cardHeader: {
 				element: '@CardHeader',
-				limit: '1',
+				limit: 1,
 			},
 		}),
 	},
@@ -120,36 +120,36 @@ export default {
 ## :book: API
 
 ### Filter by element tag
-As a string, it filters the vnodes with the `div` tag
-```
+As a string, it filters the vnodes by tag (as opposed to component)
+```html
 <subslot element="div" />
 ```
 
 Filter the vnodes with tag `child-component`
-```
+```html
 <subslot element="ChildComponent" />
 ```
 
 ### To match a specific component
 Use the `@` prefix to use the component from the `components` hash
-```
+```html
 <subslot element="@ChildComponent" />
 ```
 
 Or, pass in the direct Component reference
-```
+```html
 <subslot :element="ChildComponent" />
 ```
 
 ### To match multiple elements
 Pass in an array
 
-```
+```html
 <subslot :element="[ChildComponentA, '@ChildComponentB', 'div']" />
 ```
 
 ### Limit the number of returned elements
-```
+```html
 <subslot
 	element="ChildComponent"
 	limit="1"
@@ -158,13 +158,13 @@ Pass in an array
 
 ### Inverse the filter
 Set the `not` boolean to inverse the filter and get everything that _doesn't_ match.
-```
+```html
 <subslot not element="@ChildComponent" />
 ```
 
 ### Slot fallback
 Like normal slots, what you pass into the slot of `subslot` will be the fallback content of that `subslot`.
-```
+```html
 <subslot name="banner">
 	<default-banner />
 </subslot>
@@ -177,7 +177,7 @@ Like normal slots, what you pass into the slot of `subslot` will be the fallback
 ## :zap: Advanced usage
 
 ### Pass in vnodes directly
-```
+```html
 <subslot
 	:vnodes="$slots.namedSlot"
 	element="@ChildComponent"
