@@ -1,0 +1,104 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Subslot $subslots 1`] = `
+<div
+  class="card"
+>
+  <!---->
+</div>
+`;
+
+exports[`Subslot Should emit "no-match" on no match 1`] = `
+<div
+  class="card"
+>
+  <div
+    class="card-header"
+  >
+    <!---->
+  </div>
+</div>
+`;
+
+exports[`Subslot Should enforce limit 1`] = `
+<div
+  class="card"
+>
+  <div>
+    
+						Header
+					
+  </div>
+  <div>
+    
+						Header
+					
+  </div>
+  <div>
+    
+						Header
+					
+  </div>
+</div>
+`;
+
+exports[`Subslot Should support filter attributes 1`] = `
+<div
+  class="card"
+>
+  <div
+    class="card-header"
+  >
+    <div>
+      
+						Header
+					
+    </div>
+  </div>
+   
+  <div
+    class="card-content"
+  >
+    
+
+					Content
+				
+  </div>
+</div>
+`;
+
+exports[`Subslot Should support named subslots 1`] = `
+<div
+  class="card"
+>
+  <div
+    class="card-header"
+  >
+    <div>
+      
+						Header
+					
+    </div>
+  </div>
+   
+  <div
+    class="card-content"
+  >
+    
+
+					Content
+
+					
+  </div>
+   
+  <div
+    class="card-footer"
+  >
+    <div>
+      
+						Footer
+					
+    </div>
+  </div>
+</div>
+`;
