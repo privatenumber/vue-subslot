@@ -164,11 +164,11 @@ Set the `not` boolean to inverse the filter and get everything that _doesn't_ ma
 <subslot not element="@ChildComponent" />
 ```
 
-### Events
+### :loop: Events
 - `no-match`: When there are no matching vnodes
 
 
-## Advanced usage
+## :zap: Advanced usage
 
 ### Choose another slot than the default
 ```
