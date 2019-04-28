@@ -15,6 +15,7 @@ module.exports = {
 		path: path.resolve('dist'),
 		publicPath: '/',
 		library: 'Subslot',
+		libraryExport: 'default',
 		libraryTarget: 'umd',
 	},
 
