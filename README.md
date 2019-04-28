@@ -25,10 +25,9 @@ export default {
 
 
 ## :beginner: Use case
-Have you ever developed a parent-child component set, and wanted to allow users to just pass in the child-component without specifiying a slot but still have the same level of control as named-slots? With Subslot, you can!
+Have you ever developed a parent-child component set, and wanted to allow users to pass in the child-component without specifiying a slot but still have the same level of control as named-slots? With Subslot, you can!
 
-Imagine being able to offer the following API.
-
+Imagine being able to offer the following API with parent-child components _Card_ and _CardHeader_.
 ```html
 <card>
 	<!-- The Card Header will be positioned separetely from the content -->
@@ -40,8 +39,7 @@ Imagine being able to offer the following API.
 </card>
 ```
 
-Using Subslot, this is all the code you need to make this possible.
-_Card.vue_
+Using Subslot, this is all the code you need to make this possible. This is what _Card.vue_ looks like.
 ```vue
 <template>
 	<div class="card">
@@ -72,8 +70,8 @@ export default {
 </script>
 ```
 
-Alternatively, you can delegate the filteration logic to the script tag too. With this syntax, you can access subslots like you would normal slots but via `$subslots`.
-_Card.vue_
+### Defining Subslots
+Alternatively to using inline filter attriburtes, you can delegate subslot definition to the component. With this syntax, you can access subslots like you would normal slots but via `$subslots`. This is what _Card.vue_ would look like.
 ```vue
 <template>
 	<div class="card">
@@ -164,18 +162,19 @@ Set the `not` boolean to inverse the filter and get everything that _doesn't_ ma
 <subslot not element="@ChildComponent" />
 ```
 
-### :loop: Events
-- `no-match`: When there are no matching vnodes
+### Slot fallback
+Like normal slots, what you pass into the slot of `subslot` will be the fallback content of that `subslot`.
+```
+<subslot name="banner">
+	<default-banner />
+</subslot>
+```
+
+## :loop: Events
+- `@no-match`: When there are no matching vnodes
 
 
 ## :zap: Advanced usage
-
-### Choose another slot than the default
-```
-<subslot element="@ChildComponent">
-	<slot name="namedSlot" />
-</subslot>
-```
 
 ### Pass in vnodes directly
 ```

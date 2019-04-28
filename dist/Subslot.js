@@ -1,1 +1,112 @@
-!function(t,e){if("object"==typeof exports&&"object"==typeof module)module.exports=e();else if("function"==typeof define&&define.amd)define([],e);else{var n=e();for(var r in n)("object"==typeof exports?exports:t)[r]=n[r]}}(window,function(){return function(t){var e={};function n(r){if(e[r])return e[r].exports;var o=e[r]={i:r,l:!1,exports:{}};return t[r].call(o.exports,o,o.exports,n),o.l=!0,o.exports}return n.m=t,n.c=e,n.d=function(t,e,r){n.o(t,e)||Object.defineProperty(t,e,{enumerable:!0,get:r})},n.r=function(t){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(t,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(t,"__esModule",{value:!0})},n.t=function(t,e){if(1&e&&(t=n(t)),8&e)return t;if(4&e&&"object"==typeof t&&t&&t.__esModule)return t;var r=Object.create(null);if(n.r(r),Object.defineProperty(r,"default",{enumerable:!0,value:t}),2&e&&"string"!=typeof t)for(var o in t)n.d(r,o,function(e){return t[e]}.bind(null,o));return r},n.n=function(t){var e=t&&t.__esModule?function(){return t.default}:function(){return t};return n.d(e,"a",e),e},n.o=function(t,e){return Object.prototype.hasOwnProperty.call(t,e)},n.p="/",n(n.s=0)}([function(t,e,n){"use strict";function r(t,e){return function(t){if(Array.isArray(t))return t}(t)||function(t,e){var n=[],r=!0,o=!1,i=void 0;try{for(var u,l=t[Symbol.iterator]();!(r=(u=l.next()).done)&&(n.push(u.value),!e||n.length!==e);r=!0);}catch(t){o=!0,i=t}finally{try{r||null==l.return||l.return()}finally{if(o)throw i}}return n}(t,e)||function(){throw new TypeError("Invalid attempt to destructure non-iterable instance")}()}n.r(e);var o=function(t){var e=t.vnodes,n=t.filter,r=function(t){var e=t.vm,n=t.filter,r=[],o=[];return(Array.isArray(n.element)?n.element:[n.element]).forEach(function(t){if("string"!=typeof t)r.push(t);else{if("@"===t[0]){var n=e.$options.components[t.slice(1)];return void(n&&r.push(n))}o.push(t)}}),{components:r,tags:o}}({vm:t.vm,filter:n}),o=r.components,i=r.tags;return e=e.filter(function(t){var e=t.componentOptions&&t.componentOptions.Ctor.extendOptions,r=(t.componentOptions||t).tag,u=e&&o.includes(e)||r&&i.includes(r);return n.not?!u:u}),n.limit&&(e=e.slice(0,n.limit)),e};Symbol("SubSlot");e.default={functional:!0,props:{not:{type:Boolean},element:{type:[Array,String]},limit:{type:String,validator:function(t){return parseInt(t,10)}},vnodes:{type:null},name:{type:String,default:"default"}},render:function(t,e){var n,r=e.props,i=e.parent;return i.$subslots?n=i.$subslots[r.name]:(n=function(t){if(t.props.vnodes)return t.props.vnodes;var e=t.slots();if(e.default)return e.default;var n=t.parent.$slots.default;return n||[]}(e),n=o({vnodes:n,filter:r,vm:i})),n&&0!==n.length||function(t,e){var n=t.listeners[e];if("function"==typeof n){for(var r=arguments.length,o=new Array(r>2?r-2:0),i=2;i<r;i++)o[i-2]=arguments[i];n.apply(void 0,o)}}(e,"no-match"),n},slots:function(t){return{$subslots:function(){var e=this,n=this.$slots.default;return Object.keys(t).reduce(function(i,u){var l,f,a,s,c,p=t[u],d=o({filter:"string"==typeof p?(l=p,f=!1,a=r(l.split(":"),2),s=a[0],c=a[1],"!"===s[0]&&(f=!0,s=s.slice(1)),{element:s=s.split(","),limit:c,not:f}):p,vnodes:n,vm:e}),v=!0,y=!1,m=void 0;try{for(var b,g=d[Symbol.iterator]();!(v=(b=g.next()).done);v=!0){var h=b.value;i.default.splice(i.default.indexOf(h),1)}}catch(t){y=!0,m=t}finally{try{v||null==g.return||g.return()}finally{if(y)throw m}}return d.length&&(i[u]=d),i},{default:n.slice(0)})}}}}}])});
+(function webpackUniversalModuleDefinition(root, factory) {
+	if(typeof exports === 'object' && typeof module === 'object')
+		module.exports = factory();
+	else if(typeof define === 'function' && define.amd)
+		define([], factory);
+	else {
+		var a = factory();
+		for(var i in a) (typeof exports === 'object' ? exports : root)[i] = a[i];
+	}
+})(window, function() {
+return /******/ (function(modules) { // webpackBootstrap
+/******/ 	// The module cache
+/******/ 	var installedModules = {};
+/******/
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/
+/******/ 		// Check if module is in cache
+/******/ 		if(installedModules[moduleId]) {
+/******/ 			return installedModules[moduleId].exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = installedModules[moduleId] = {
+/******/ 			i: moduleId,
+/******/ 			l: false,
+/******/ 			exports: {}
+/******/ 		};
+/******/
+/******/ 		// Execute the module function
+/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+/******/
+/******/ 		// Flag the module as loaded
+/******/ 		module.l = true;
+/******/
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/
+/******/
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = modules;
+/******/
+/******/ 	// expose the module cache
+/******/ 	__webpack_require__.c = installedModules;
+/******/
+/******/ 	// define getter function for harmony exports
+/******/ 	__webpack_require__.d = function(exports, name, getter) {
+/******/ 		if(!__webpack_require__.o(exports, name)) {
+/******/ 			Object.defineProperty(exports, name, { enumerable: true, get: getter });
+/******/ 		}
+/******/ 	};
+/******/
+/******/ 	// define __esModule on exports
+/******/ 	__webpack_require__.r = function(exports) {
+/******/ 		if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 			Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 		}
+/******/ 		Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 	};
+/******/
+/******/ 	// create a fake namespace object
+/******/ 	// mode & 1: value is a module id, require it
+/******/ 	// mode & 2: merge all properties of value into the ns
+/******/ 	// mode & 4: return value when already ns object
+/******/ 	// mode & 8|1: behave like require
+/******/ 	__webpack_require__.t = function(value, mode) {
+/******/ 		if(mode & 1) value = __webpack_require__(value);
+/******/ 		if(mode & 8) return value;
+/******/ 		if((mode & 4) && typeof value === 'object' && value && value.__esModule) return value;
+/******/ 		var ns = Object.create(null);
+/******/ 		__webpack_require__.r(ns);
+/******/ 		Object.defineProperty(ns, 'default', { enumerable: true, value: value });
+/******/ 		if(mode & 2 && typeof value != 'string') for(var key in value) __webpack_require__.d(ns, key, function(key) { return value[key]; }.bind(null, key));
+/******/ 		return ns;
+/******/ 	};
+/******/
+/******/ 	// getDefaultExport function for compatibility with non-harmony modules
+/******/ 	__webpack_require__.n = function(module) {
+/******/ 		var getter = module && module.__esModule ?
+/******/ 			function getDefault() { return module['default']; } :
+/******/ 			function getModuleExports() { return module; };
+/******/ 		__webpack_require__.d(getter, 'a', getter);
+/******/ 		return getter;
+/******/ 	};
+/******/
+/******/ 	// Object.prototype.hasOwnProperty.call
+/******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
+/******/
+/******/ 	// __webpack_public_path__
+/******/ 	__webpack_require__.p = "/";
+/******/
+/******/
+/******/ 	// Load entry module and return exports
+/******/ 	return __webpack_require__(__webpack_require__.s = "./Subslot.js");
+/******/ })
+/************************************************************************/
+/******/ ({
+
+/***/ "./Subslot.js":
+/*!********************!*\
+  !*** ./Subslot.js ***!
+  \********************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\nfunction _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest(); }\n\nfunction _nonIterableRest() { throw new TypeError(\"Invalid attempt to destructure non-iterable instance\"); }\n\nfunction _iterableToArrayLimit(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i[\"return\"] != null) _i[\"return\"](); } finally { if (_d) throw _e; } } return _arr; }\n\nfunction _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }\n\nvar remove = function remove(arr, el) {\n  return arr.splice(arr.indexOf(el), 1);\n};\n\nvar getVnodes = function getVnodes(ctx) {\n  if (ctx.props.vnodes) {\n    return ctx.props.vnodes;\n  }\n\n  var defaultSlot = ctx.parent.$slots[\"default\"];\n\n  if (defaultSlot) {\n    return defaultSlot;\n  }\n\n  return [];\n};\n\nvar getWhitelist = function getWhitelist(_ref) {\n  var vm = _ref.vm,\n      filter = _ref.filter;\n  var components = [];\n  var tags = [];\n\n  var _element = Array.isArray(filter.element) ? filter.element : [filter.element];\n\n  _element.forEach(function (element) {\n    if (typeof element === 'string') {\n      if (element[0] === '@') {\n        var component = vm.$options.components[element.slice(1)];\n\n        if (component) {\n          components.push(component);\n        }\n\n        return;\n      }\n\n      tags.push(element);\n      return;\n    }\n\n    components.push(element);\n  });\n\n  return {\n    components: components,\n    tags: tags\n  };\n};\n\nvar emit = function emit(ctx, eventName) {\n  var eventHandler = ctx.listeners[eventName];\n\n  if (typeof eventHandler === 'function') {\n    for (var _len = arguments.length, args = new Array(_len > 2 ? _len - 2 : 0), _key = 2; _key < _len; _key++) {\n      args[_key - 2] = arguments[_key];\n    }\n\n    eventHandler.apply(void 0, args);\n  }\n};\n\nvar createFilter = function createFilter(strFilter) {\n  var not = false;\n\n  var _strFilter$split = strFilter.split(':'),\n      _strFilter$split2 = _slicedToArray(_strFilter$split, 2),\n      element = _strFilter$split2[0],\n      limit = _strFilter$split2[1];\n\n  if (element[0] === '!') {\n    not = true;\n    element = element.slice(1);\n  }\n\n  element = element.split(',');\n  return {\n    element: element,\n    limit: limit,\n    not: not\n  };\n};\n\nvar filterVnodes = function filterVnodes(_ref2) {\n  var vnodes = _ref2.vnodes,\n      filter = _ref2.filter,\n      vm = _ref2.vm;\n\n  var _getWhitelist = getWhitelist({\n    vm: vm,\n    filter: filter\n  }),\n      components = _getWhitelist.components,\n      tags = _getWhitelist.tags;\n\n  vnodes = vnodes.filter(function (vnode) {\n    var isComponent = vnode.componentOptions && vnode.componentOptions.Ctor.extendOptions;\n\n    var _ref3 = vnode.componentOptions || vnode,\n        tag = _ref3.tag;\n\n    var elementMatch = isComponent && components.includes(isComponent) || tag && tags.includes(tag);\n    return filter.not ? !elementMatch : elementMatch;\n  });\n\n  if (filter.limit) {\n    vnodes = vnodes.slice(0, filter.limit);\n  }\n\n  return vnodes;\n};\n\nvar key = Symbol('SubSlot');\n/* harmony default export */ __webpack_exports__[\"default\"] = ({\n  functional: true,\n  props: {\n    not: {\n      type: Boolean\n    },\n    element: {\n      type: [Array, String]\n    },\n    limit: {\n      type: String,\n      validator: function validator(val) {\n        return parseInt(val, 10);\n      }\n    },\n    vnodes: {\n      type: null\n    },\n    name: {\n      type: String,\n      \"default\": 'default'\n    }\n  },\n  render: function render(h, ctx) {\n    var props = ctx.props,\n        parent = ctx.parent;\n    var vnodes;\n\n    if (props.name) {\n      console.assert(parent.$subslots, 'Subslots must be defined in the `computed` hash of the component');\n    } // Detect definition\n\n\n    if (parent.$subslots) {\n      vnodes = parent.$subslots[props.name];\n    } else {\n      vnodes = getVnodes(ctx);\n      vnodes = filterVnodes({\n        vnodes: vnodes,\n        filter: props,\n        vm: parent\n      });\n    }\n\n    if (!vnodes || vnodes.length === 0) {\n      emit(ctx, 'no-match');\n      return ctx.slots()[\"default\"];\n    }\n\n    return vnodes;\n  },\n\n  /* Static method */\n  slots: function slots(def) {\n    return {\n      $subslots: function $subslots() {\n        var _this = this;\n\n        console.assert(this.$slots, 'Subslot.slots() must be spread into the `computed` hash of the component.');\n        var defaultSlot = this.$slots[\"default\"];\n        var subslots = Object.keys(def).reduce(function (slots, name) {\n          var slotDef = def[name];\n          var vnodes = filterVnodes({\n            filter: typeof slotDef === 'string' ? createFilter(slotDef) : slotDef,\n            vnodes: defaultSlot,\n            vm: _this\n          });\n          vnodes.forEach(function (vn) {\n            return remove(slots[\"default\"], vn);\n          });\n\n          if (vnodes.length) {\n            slots[name] = vnodes;\n          }\n\n          return slots;\n        }, {\n          \"default\": defaultSlot.slice(0)\n        });\n        return subslots;\n      }\n    };\n  }\n});\n\n//# sourceURL=webpack:///./Subslot.js?");
+
+/***/ })
+
+/******/ });
+});

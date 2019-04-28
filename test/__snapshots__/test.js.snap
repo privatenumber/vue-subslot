@@ -102,3 +102,17 @@ exports[`Subslot Should support named subslots 1`] = `
   </div>
 </div>
 `;
+
+exports[`Subslot Should use fallback 1`] = `
+<div
+  class="card"
+>
+  <div
+    class="card-header"
+  >
+    
+							Fallback
+						
+  </div>
+</div>
+`;
