@@ -1,5 +1,5 @@
 <p align="center">
-	<br><br>
+	<br>
 	<img src="/.github/logo.png">
 	<br><br>
 	<a href="https://npm.im/vue-subslot"><img src="https://badgen.net/npm/v/vue-subslot"></a>
