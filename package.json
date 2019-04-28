@@ -1,6 +1,6 @@
 {
   "name": "vue-subslot",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Reads and filters $slots.default automatically.",
   "license": "MIT",
   "repository": {
