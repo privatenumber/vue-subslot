@@ -1,14 +1,30 @@
 [![npm version](https://badgen.net/npm/v/vue-subslot)](https://npm.im/vue-subslot) [![npm downloads](https://badgen.net/npm/dm/vue-subslot)](https://npm.im/vue-subslot) [![install size](https://packagephobia.now.sh/badge?p=vue-subslot)](https://packagephobia.now.sh/result?p=vue-subslot)
 
 
-Use [Subslot](https://npm.im/vue-subslot) in your Vue components to gain _finer control_ over your slots to offer a _richer slot API_.
+> Use [Subslot](https://npm.im/vue-subslot) in your Vue component to gain _finer control_ over your slots and to offer a _richer slot API_.
 
-## Install
+## :rocket: Quick setup
+
+#### Install
 ```sh
-npm install vue-subslot
+npm i vue-subslot
 ```
 
-## Use case
+#### Import and use as a Vue component
+```js
+import Subslot from 'vue-subslot';
+
+export default {
+	...
+	components: {
+		Subslot
+	}
+	...
+}
+```
+
+
+## :beginner: Use case
 Have you ever developed a parent-child component set, and wanted to allow users to just pass in the child-component without specifiying a slot but still have the same level of control as named-slots? With Subslot, you can!
 
 Imagine being able to offer the following API.
@@ -103,7 +119,7 @@ export default {
 </script>
 ```
 
-## API
+## :book: API
 
 ### Filter by element tag
 As a string, it filters the vnodes with the `div` tag
@@ -168,4 +184,3 @@ Set the `not` boolean to inverse the filter and get everything that _doesn't_ ma
 	element="@ChildComponent"
 />
 ```
-
