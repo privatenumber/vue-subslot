@@ -1,7 +1,10 @@
-<center>![Subslot logo](/.github/logo.png)</center>
-
-[![npm version](https://badgen.net/npm/v/vue-subslot)](https://npm.im/vue-subslot) [![npm downloads](https://badgen.net/npm/dm/vue-subslot)](https://npm.im/vue-subslot) [![install size](https://packagephobia.now.sh/badge?p=vue-subslot)](https://packagephobia.now.sh/result?p=vue-subslot)
-
+<p align="center">
+	<img src="/.github/logo.png">
+	<br><br>
+	<a href="https://npm.im/vue-subslot"><img src="https://badgen.net/npm/v/vue-subslot"></a>
+	<a href="https://npm.im/vue-subslot"><img src="https://badgen.net/npm/dm/vue-subslot"></a>
+	<a href="https://packagephobia.now.sh/result?p=vue-subslot"><img src="https://packagephobia.now.sh/badge?p=vue-subslot"></a>
+</p>
 
 > Use [Subslot](https://npm.im/vue-subslot) in your Vue component to gain _finer control_ over your slots and to offer a _richer slot API_.
 
