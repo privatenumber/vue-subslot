@@ -1,3 +1,5 @@
+<center>![Subslot logo](/.github/logo.png)</center>
+
 [![npm version](https://badgen.net/npm/v/vue-subslot)](https://npm.im/vue-subslot) [![npm downloads](https://badgen.net/npm/dm/vue-subslot)](https://npm.im/vue-subslot) [![install size](https://packagephobia.now.sh/badge?p=vue-subslot)](https://packagephobia.now.sh/result?p=vue-subslot)
 
 
