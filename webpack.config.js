@@ -14,6 +14,7 @@ module.exports = {
 		filename: '[name].js',
 		path: path.resolve('dist'),
 		publicPath: '/',
+		library: 'Subslot',
 		libraryTarget: 'umd',
 	},
 
