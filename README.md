@@ -27,6 +27,7 @@ export default {
 ## :beginner: Use case
 Have you ever developed a parent-child component set, and wanted to allow users to pass in the child-component without specifiying a slot but still have the same level of control as named-slots? With Subslot, you can!
 
+### Demo 1: Inline filter attributes&nbsp;&nbsp;[![JSFiddle Demo](https://flat.badgen.net/badge/JSFiddle/Open%20Demo/blue)](https://jsfiddle.net/hirokiosame/rjxtnysb/)
 Imagine being able to offer the following API with parent-child components _Card_ and _CardHeader_.
 ```html
 <card>
@@ -70,7 +71,8 @@ export default {
 </script>
 ```
 
-### Defining Subslots
+
+### Demo 2: Defining Subslots&nbsp;&nbsp;[![JSFiddle Demo](https://flat.badgen.net/badge/JSFiddle/Open%20Demo/blue)](https://jsfiddle.net/hirokiosame/0khLgw7r/)
 Alternatively to using inline filter attributes, you can define subslots on the component. With this approach, you can access subslots like you would normal slots but via `$subslots`. This is what _Card.vue_ would look like.
 ```vue
 <template>
@@ -116,6 +118,7 @@ export default {
 };
 </script>
 ```
+
 
 ## :book: API
 
@@ -171,12 +174,12 @@ Like normal slots, what you pass into the slot of `subslot` will be the fallback
 ```
 
 ## :loop: Events
-- `@no-match`: When there are no matching vnodes
+- `@no-match`: Emitted when there are no matching vnodes
 
 
 ## :zap: Advanced usage
 
-### Pass in vnodes directly
+### Pass in vnodes from a difference source
 ```html
 <subslot
 	:vnodes="$slots.namedSlot"
