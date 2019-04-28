@@ -1,5 +1,17 @@
-# Vue Subslot
-Ever wanted to pick out a specific element from the default slot? With Subslot you can! Imagine making a Card component that can offer the following API:
+[![npm version](https://badgen.net/npm/v/vue-subslot)](https://npm.im/vue-subslot) [![npm downloads](https://badgen.net/npm/dm/vue-subslot)](https://npm.im/vue-subslot) [![install size](https://packagephobia.now.sh/badge?p=vue-subslot)](https://packagephobia.now.sh/result?p=vue-subslot)
+
+
+Use [Subslot](https://npm.im/vue-subslot) in your Vue components to gain _finer control_ over your slots to offer a _richer slot API_.
+
+## Install
+```sh
+npm install vue-subslot
+```
+
+## Use case
+Have you ever developed a parent-child component set, and wanted to allow users to just pass in the child-component without specifiying a slot but still have the same level of control as named-slots? With Subslot, you can!
+
+Imagine being able to offer the following API.
 
 ```html
 <card>
@@ -12,8 +24,7 @@ Ever wanted to pick out a specific element from the default slot? With Subslot y
 </card>
 ```
 
-Using Subslot, this is all the code you need to make this possible!
-
+Using Subslot, this is all the code you need to make this possible.
 _Card.vue_
 ```vue
 <template>
@@ -45,7 +56,7 @@ export default {
 </script>
 ```
 
-Alternatively, you can delegate the filteration logic to the script tag too:. With this syntax, you can access subslots like you would normal slots but via `$subslots`.
+Alternatively, you can delegate the filteration logic to the script tag too. With this syntax, you can access subslots like you would normal slots but via `$subslots`.
 _Card.vue_
 ```vue
 <template>
@@ -91,8 +102,6 @@ export default {
 };
 </script>
 ```
-
-
 
 ## API
 

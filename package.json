@@ -2,6 +2,22 @@
   "name": "vue-subslot",
   "version": "1.0.0",
   "description": "Reads and filters $slots.default automatically.",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hirokiosame/vue-subslot.git"
+  },
+  "author": "Hiroki Osame <hiroki.osame@gmail.com>",
+  "bugs": {
+    "url": "https://github.com/hirokiosame/vue-subslot/issues"
+  },
+  "homepage": "https://github.com/hirokiosame/vue-subslot#readme",
+  "scripts": {
+    "build": "webpack",
+    "dev": "webpack --watch",
+    "test": "jest"
+  },
+  "files": ["dist"],
   "main": "dist/Subslot.js",
   "devDependencies": {
     "@babel/core": "^7.4.4",
@@ -16,20 +32,5 @@
     "vue-template-compiler": "^2.6.10",
     "webpack": "^4.30.0",
     "webpack-cli": "^3.3.1"
-  },
-  "scripts": {
-    "build": "webpack",
-    "dev": "webpack --watch",
-    "test": "jest"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/hirokiosame/vue-slotty.git"
-  },
-  "author": "Hiroki Osame <hiroki.osame@gmail.com>",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/hirokiosame/vue-slotty/issues"
-  },
-  "homepage": "https://github.com/hirokiosame/vue-slotty#readme"
+  }
 }
