@@ -132,7 +132,7 @@ export default {
 			$subslots() {
 				console.assert(this.$slots, 'Subslot.slots() must be spread into the `computed` hash of the component.');
 
-				const { default: defaultSlot } = this.$slots;
+				const { default: defaultSlot = [] } = this.$slots;
 
 				const subslots = Object.keys(def).reduce((slots, name) => {
 					const slotDef = def[name];
