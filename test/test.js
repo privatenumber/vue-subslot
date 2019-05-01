@@ -68,16 +68,15 @@ describe('Subslot', () => {
 				CardHeader,
 			},
 
-			computed: {
-				...Subslot.slots({
+			mixins: [
+				Subslot.define({
 					cardHeader: '@CardHeader:1',
 					cardFooter: {
 						element: CardFooter,
 						limit: 1,
 					},
-					// text: '!*'
 				}),
-			},
+			],
 		};
 
 		const usage = {
@@ -161,11 +160,11 @@ describe('Subslot', () => {
 				CardHeader,
 			},
 
-			computed: {
-				...Subslot.slots({
+			mixins: [
+				Subslot.define({
 					cardHeader: '@CardHeader:1',
 				}),
-			},
+			],
 		};
 
 		const usage = {
@@ -197,11 +196,11 @@ describe('Subslot', () => {
 				CardHeader,
 			},
 
-			computed: {
-				...Subslot.slots({
+			mixins: [
+				Subslot.define({
 					cardHeader: '@CardHeader:1',
 				}),
-			},
+			],
 
 			methods: {
 				onNoCardHeader,
@@ -235,11 +234,11 @@ describe('Subslot', () => {
 				CardHeader,
 			},
 
-			computed: {
-				...Subslot.slots({
+			mixins: [
+				Subslot.define({
 					cardHeader: '@CardHeader:1',
 				}),
-			},
+			],
 		};
 
 		const usage = {
@@ -250,5 +249,61 @@ describe('Subslot', () => {
 		const wrapper = mount(usage);
 		expect(wrapper.element).toMatchSnapshot();
 	});
-});
 
+	test('Reactive subslots', () => {
+		const Card = {
+			template: `
+				<div class="card">
+					<div class="card-header">
+						<subslot name="cardHeader" />
+					</div>
+					<div class="card-content">
+						<subslot />
+					</div>
+				</div>
+			`,
+
+			components: {
+				Subslot,
+				CardHeader,
+			},
+
+			mixins: [
+				Subslot.define({
+					cardHeader: '@CardHeader:1',
+				}),
+			],
+		};
+
+		const usage = {
+			template: `
+				<card>
+					<card-header>
+						Header {{ count }}
+					</card-header>
+
+					Content {{ count }}
+				</card>
+			`,
+
+			components: {
+				Card,
+				CardHeader,
+			},
+
+			data() {
+				return { count: 0 };
+			},
+
+			methods: {
+				increment() {
+					this.count += 1;
+				},
+			},
+		};
+
+		const wrapper = mount(usage);
+		wrapper.vm.increment();
+		expect(wrapper.element).toMatchSnapshot();
+	});
+});

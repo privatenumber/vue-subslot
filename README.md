@@ -110,8 +110,8 @@ export default {
 		CardHeader,
 	},
 
-	computed: {
-		...Subslot.slots({
+	mixins: [
+		Subslot.define({
 			// Use a string filter
 			cardHeader: '@CardHeader:1',
 
@@ -121,7 +121,7 @@ export default {
 				limit: 1,
 			},
 		}),
-	},
+	],
 };
 </script>
 ```
