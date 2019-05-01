@@ -8,6 +8,31 @@ exports[`Subslot $subslots 1`] = `
 </div>
 `;
 
+exports[`Subslot Reactive subslots 1`] = `
+<div
+  class="card"
+>
+  <div
+    class="card-header"
+  >
+    <div>
+      
+						Header 1
+					
+    </div>
+  </div>
+   
+  <div
+    class="card-content"
+  >
+    
+
+					Content 1
+				
+  </div>
+</div>
+`;
+
 exports[`Subslot Should emit "no-match" on no match 1`] = `
 <div
   class="card"

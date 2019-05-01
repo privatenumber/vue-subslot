@@ -54,10 +54,7 @@ const createFilter = (strFilter) => {
 };
 
 const filterVnodes = ({ vnodes, filter, vm }) => {
-	const { components, tags } = getWhitelist({
-		vm,
-		filter,
-	});
+	const { components, tags } = getWhitelist({ vm, filter });
 
 	vnodes = vnodes.filter((vnode) => {
 		const isComponent = (vnode.componentOptions && vnode.componentOptions.Ctor.extendOptions);
@@ -75,9 +72,29 @@ const filterVnodes = ({ vnodes, filter, vm }) => {
 	return vnodes;
 };
 
+const genSubSlots = ({ sslotDef, vnodes, vm }) => {
+	if (!vnodes) { return {}; }
 
+	return Object.entries(sslotDef)
+		.reduce((slots, [name, def]) => {
+			const filtered = filterVnodes({
+				filter: typeof def === 'string' ? createFilter(def) : def,
+				vnodes,
+				vm,
+			});
 
-const key = Symbol('SubSlot');
+			filtered.forEach(vn => remove(slots.default, vn));
+
+			if (filtered.length) {
+				slots[name] = filtered;
+			}
+
+			return slots;
+		}, {
+			default: vnodes.slice(0),
+			_original: vnodes,
+		});
+}
 
 export default {
 	functional: true,
@@ -119,43 +136,24 @@ export default {
 
 		if (!vnodes || vnodes.length === 0) {
 			emit(ctx, 'no-match');
-
 			return ctx.slots().default;
 		}
 
 		return vnodes;
 	},
 
-	/* Static method */
-	slots(def) {
+	define(sslotDef) {
+		function generate() {
+			this.$subslots = genSubSlots({
+				sslotDef,
+				vnodes: this.$slots.default,
+				vm: this,
+			});
+		}
+
 		return {
-			$subslots() {
-				console.assert(this.$slots, 'Subslot.slots() must be spread into the `computed` hash of the component.');
-
-				const { default: defaultSlot = [] } = this.$slots;
-
-				const subslots = Object.keys(def).reduce((slots, name) => {
-					const slotDef = def[name];
-
-					const vnodes = filterVnodes({
-						filter: typeof slotDef === 'string' ? createFilter(slotDef) : slotDef,
-						vnodes: defaultSlot,
-						vm: this,
-					});
-
-					vnodes.forEach(vn => remove(slots.default, vn));
-
-					if (vnodes.length) {
-						slots[name] = vnodes;
-					}
-
-					return slots;
-				}, {
-					default: defaultSlot.slice(0),
-				});
-
-				return subslots;
-			},
+			beforeCreate: generate,
+			beforeUpdate: generate,
 		};
 	},
 };
