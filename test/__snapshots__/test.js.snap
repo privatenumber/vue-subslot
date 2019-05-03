@@ -67,6 +67,160 @@ exports[`Subslot Should enforce limit 1`] = `
 </div>
 `;
 
+exports[`Subslot Should enforce offset 1`] = `
+<div
+  class="card"
+>
+  <div>
+    
+						Header 4
+					
+  </div>
+  <div>
+    
+						Header 5
+					
+  </div>
+  <div>
+    
+						Header 6
+					
+  </div>
+</div>
+`;
+
+exports[`Subslot Should support array index 1`] = `
+<div
+  class="card"
+>
+  <div
+    class="card-header"
+  >
+    <div>
+      
+						Header 3
+					
+    </div>
+    <div>
+      
+						Header 4
+					
+    </div>
+    <div>
+      
+						Header 5
+					
+    </div>
+    <div>
+      
+						Header 6
+					
+    </div>
+    <div>
+      
+						Header 7
+					
+    </div>
+    <div>
+      
+						Header 8
+					
+    </div>
+    <div>
+      
+						Header 9
+					
+    </div>
+    <div>
+      
+						Header 10
+					
+    </div>
+  </div>
+   
+  <div
+    class="card-content"
+  >
+    <div>
+      
+						Header 1
+					
+    </div>
+    <div>
+      
+						Header 2
+					
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Subslot Should support array slicing 1`] = `
+<div
+  class="card"
+>
+  <div
+    class="card-header"
+  >
+    <div>
+      
+						Header 3
+					
+    </div>
+    <div>
+      
+						Header 4
+					
+    </div>
+  </div>
+   
+  <div
+    class="card-content"
+  >
+    <div>
+      
+						Header 1
+					
+    </div>
+    <div>
+      
+						Header 2
+					
+    </div>
+    <div>
+      
+						Header 5
+					
+    </div>
+    <div>
+      
+						Header 6
+					
+    </div>
+    <div>
+      
+						Header 7
+					
+    </div>
+    <div>
+      
+						Header 8
+					
+    </div>
+    <div>
+      
+						Header 9
+					
+    </div>
+    <div>
+      
+						Header 10
+					
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Subslot Should support filter attributes 1`] = `
 <div
   class="card"
