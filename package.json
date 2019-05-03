@@ -19,6 +19,11 @@
     "test": "jest",
     "lint": "eslint src"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm test"
+    }
+  },
   "files": [
     "dist"
   ],
@@ -34,6 +39,7 @@
     "eslint-plugin-import": "^2.17.2",
     "eslint-plugin-jsx-a11y": "^6.2.1",
     "eslint-plugin-react": "^7.12.4",
+    "husky": "^2.2.0",
     "jest": "^24.7.1",
     "jest-serializer-vue": "^2.0.2",
     "vue": "^2.6.10",
