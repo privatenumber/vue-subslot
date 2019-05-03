@@ -12,9 +12,9 @@ const getVnodes = (ctx) => {
 const getWhitelist = ({ vm, filter }) => {
 	const components = [];
 	const tags = [];
-	const _element = Array.isArray(filter.element) ? filter.element : [filter.element];
+	const elements = Array.isArray(filter.element) ? filter.element : [filter.element];
 
-	_element.forEach((element) => {
+	elements.forEach((element) => {
 		if (typeof element === 'string') {
 			if (element[0] === '@') {
 				const component = vm.$options.components[element.slice(1)];
@@ -49,7 +49,6 @@ const createFilter = (strFilter) => {
 
 	if (arrPtrn.test(strFilter)) {
 		strFilter = strFilter.replace(arrPtrn, (_, _element, _offset, _limit) => {
-
 			element = _element;
 			if (_offset) { offset = _offset; }
 			if (_limit) { limit = _limit; }
@@ -66,7 +65,9 @@ const createFilter = (strFilter) => {
 
 	element = element.split(',');
 
-	return { element, offset, limit, not };
+	return {
+		element, offset, limit, not,
+	};
 };
 
 const filterVnodes = ({ vnodes, filter, vm }) => {
@@ -76,7 +77,10 @@ const filterVnodes = ({ vnodes, filter, vm }) => {
 		const isComponent = (vnode.componentOptions && vnode.componentOptions.Ctor.extendOptions);
 		const { tag } = vnode.componentOptions || vnode;
 
-		const elementMatch = (isComponent && components.includes(isComponent)) || (tag && tags.includes(tag));
+		const elementMatch = (
+			(isComponent && components.includes(isComponent))
+			|| (tag && tags.includes(tag))
+		);
 
 		return filter.not ? !elementMatch : elementMatch;
 	});
@@ -114,7 +118,7 @@ const genSubSlots = ({ sslotDef, vnodes, vm }) => {
 			default: vnodes.slice(0),
 			_original: vnodes,
 		});
-}
+};
 
 export default {
 	functional: true,
