@@ -142,6 +142,141 @@ describe('Subslot', () => {
 		expect(wrapper.element).toMatchSnapshot();
 	});
 
+	test('Should enforce offset', () => {
+		const Card = {
+			template: `
+				<div class="card">
+					<subslot
+						element="@CardHeader"
+						offset="3"
+						limit="3"
+					/>
+				</div>
+			`,
+
+			components: {
+				Subslot,
+				CardHeader,
+			},
+		};
+
+		const usage = {
+			template: `
+				<card>
+					<card-header
+						v-for="i in 10"
+						:key="i"
+					>
+						Header {{ i }}
+					</card-header>
+				</card>
+			`,
+			components: {
+				Card,
+				CardHeader,
+			},
+		};
+
+		const wrapper = mount(usage);
+		expect(wrapper.element).toMatchSnapshot();
+	});
+
+	test('Should support array index', () => {
+		const Card = {
+			template: `
+				<div class="card">
+					<div class="card-header">
+						<subslot name="cardHeader" />
+					</div>
+
+					<div class="card-content">
+						<subslot />
+					</div>
+				</div>
+			`,
+
+			components: {
+				Subslot,
+				CardHeader,
+			},
+
+			mixins: [
+				Subslot.define({
+					cardHeader: '@CardHeader[2]',
+				}),
+			],
+		};
+
+		const usage = {
+			template: `
+				<card>
+					<card-header
+						v-for="i in 10"
+						:key="i"
+					>
+						Header {{ i }}
+					</card-header>
+				</card>
+			`,
+			components: {
+				Card,
+				CardHeader,
+				CardFooter,
+			},
+		};
+
+		const wrapper = mount(usage);
+		expect(wrapper.element).toMatchSnapshot();
+	});
+
+	test('Should support array slicing', () => {
+		const Card = {
+			template: `
+				<div class="card">
+					<div class="card-header">
+						<subslot name="cardHeader" />
+					</div>
+
+					<div class="card-content">
+						<subslot />
+					</div>
+				</div>
+			`,
+
+			components: {
+				Subslot,
+				CardHeader,
+			},
+
+			mixins: [
+				Subslot.define({
+					cardHeader: '@CardHeader[2:2]',
+				}),
+			],
+		};
+
+		const usage = {
+			template: `
+				<card>
+					<card-header
+						v-for="i in 10"
+						:key="i"
+					>
+						Header {{ i }}
+					</card-header>
+				</card>
+			`,
+			components: {
+				Card,
+				CardHeader,
+				CardFooter,
+			},
+		};
+
+		const wrapper = mount(usage);
+		expect(wrapper.element).toMatchSnapshot();
+	});
+
 	test('$subslots', () => {
 		const Card = {
 			template: `
@@ -306,4 +441,5 @@ describe('Subslot', () => {
 		wrapper.vm.increment();
 		expect(wrapper.element).toMatchSnapshot();
 	});
+
 });

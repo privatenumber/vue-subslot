@@ -40,9 +40,25 @@ const emit = (ctx, eventName, ...args) => {
 	}
 };
 
+const arrPtrn = /(.+)\[(\d+)(?::(\d+))?\]$/;
 const createFilter = (strFilter) => {
 	let not = false;
-	let [element, limit] = strFilter.split(':');
+	let element;
+	let offset = 0;
+	let limit;
+
+	if (arrPtrn.test(strFilter)) {
+		strFilter = strFilter.replace(arrPtrn, (_, _element, _offset, _limit) => {
+
+			element = _element;
+			if (_offset) { offset = _offset; }
+			if (_limit) { limit = _limit; }
+			return '';
+		});
+	} else {
+		[element, limit] = strFilter.split(':');
+	}
+
 	if (element[0] === '!') {
 		not = true;
 		element = element.slice(1);
@@ -50,7 +66,7 @@ const createFilter = (strFilter) => {
 
 	element = element.split(',');
 
-	return { element, limit, not };
+	return { element, offset, limit, not };
 };
 
 const filterVnodes = ({ vnodes, filter, vm }) => {
@@ -64,6 +80,10 @@ const filterVnodes = ({ vnodes, filter, vm }) => {
 
 		return filter.not ? !elementMatch : elementMatch;
 	});
+
+	if (filter.offset) {
+		vnodes = vnodes.slice(filter.offset);
+	}
 
 	if (filter.limit) {
 		vnodes = vnodes.slice(0, filter.limit);
@@ -105,9 +125,14 @@ export default {
 		element: {
 			type: [Array, String],
 		},
+		offset: {
+			type: [String, Number],
+			default: 0,
+			validator: val => !Number.isNaN(parseInt(val, 10)),
+		},
 		limit: {
-			type: String,
-			validator: val => parseInt(val, 10),
+			type: [String, Number],
+			validator: val => !Number.isNaN(parseInt(val, 10)),
 		},
 		vnodes: {
 			type: null,
