@@ -113,7 +113,8 @@ export default {
 	mixins: [
 		Subslot.define({
 			// Use a string filter
-			cardHeader: '@CardHeader:1',
+			cardHeader: '@CardHeader:1', // Limit 1
+			cardHeader: '@CardHeader[3:2]', // Offset 3, Limit 2
 
 			// Or an object filter
 			cardHeader: {
@@ -158,10 +159,19 @@ Pass in an array
 <subslot :element="[ChildComponentA, '@ChildComponentB', 'div']" />
 ```
 
+### Offset the number of returned elements
+```html
+<subslot
+	element="ChildComponent"
+	offset="1"
+/>
+```
+
 ### Limit the number of returned elements
 ```html
 <subslot
 	element="ChildComponent"
+	offset="1"
 	limit="1"
 />
 ```
