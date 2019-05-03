@@ -14,7 +14,8 @@
   "homepage": "https://github.com/privatenumber/vue-subslot#readme",
   "scripts": {
     "build": "NODE_ENV=production webpack",
-    "dev": "webpack --watch",
+    "dev-build": "webpack --watch",
+    "dev": "jest --watch",
     "test": "jest"
   },
   "files": [
