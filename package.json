@@ -17,7 +17,8 @@
     "dev-build": "webpack --watch",
     "dev": "jest --watch",
     "test": "jest",
-    "lint": "eslint src"
+    "lint": "eslint src",
+    "version": "npm run build && git add dist"
   },
   "husky": {
     "hooks": {
