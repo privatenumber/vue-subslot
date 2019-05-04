@@ -221,6 +221,31 @@ exports[`Subslot Should support array slicing 1`] = `
 </div>
 `;
 
+exports[`Subslot Should support element as a direct reference 1`] = `
+<div
+  class="card"
+>
+  <div
+    class="card-header"
+  >
+    <div>
+      
+						Header
+					
+    </div>
+  </div>
+   
+  <div
+    class="card-content"
+  >
+    
+
+					Content
+				
+  </div>
+</div>
+`;
+
 exports[`Subslot Should support filter attributes 1`] = `
 <div
   class="card"
