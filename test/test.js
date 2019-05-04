@@ -45,6 +45,51 @@ describe('Subslot', () => {
 		expect(wrapper.element).toMatchSnapshot();
 	});
 
+	test('Should support element as a direct reference', () => {
+		const Card = {
+			template: `
+				<div class="card">
+					<div class="card-header">
+						<subslot :element="CardHeader" limit="1" />
+					</div>
+
+					<div class="card-content">
+						<subslot not :element="CardHeader" />
+					</div>
+				</div>
+			`,
+
+			components: {
+				Subslot,
+			},
+
+			data() {
+				return {
+					CardHeader,
+				};
+			},
+		};
+
+		const usage = {
+			template: `
+				<card>
+					<card-header>
+						Header
+					</card-header>
+
+					Content
+				</card>
+			`,
+			components: {
+				Card,
+				CardHeader,
+			},
+		};
+
+		const wrapper = mount(usage);
+		expect(wrapper.element).toMatchSnapshot();
+	});
+
 	test('Should support named subslots', () => {
 		const Card = {
 			template: `

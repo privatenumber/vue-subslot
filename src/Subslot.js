@@ -127,7 +127,7 @@ export default {
 			type: Boolean,
 		},
 		element: {
-			type: [Array, String],
+			type: [Object, Array, String],
 		},
 		offset: {
 			type: [String, Number],
