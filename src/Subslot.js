@@ -40,7 +40,7 @@ const emit = (ctx, eventName, ...args) => {
 	}
 };
 
-const arrPtrn = /(.+)\[(\d+)(?::(\d+))?\]$/;
+const arrPtrn = /(.+)\[(\d?)(?::(\d+))?\]$/;
 const createFilter = (strFilter) => {
 	let not = false;
 	let element;

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Subslot $subslots 1`] = `
+exports[`$subslots support Empty slot 1`] = `
 <div
   class="card"
 >
@@ -8,270 +8,17 @@ exports[`Subslot $subslots 1`] = `
 </div>
 `;
 
-exports[`Subslot Reactive subslots 1`] = `
+exports[`$subslots support Fallback reactive 1`] = `
 <div
   class="card"
 >
-  <div
-    class="card-header"
-  >
-    <div>
-      
-						Header 1
+  
+						Fallback is reactive!
 					
-    </div>
-  </div>
-   
-  <div
-    class="card-content"
-  >
-    
-
-					Content 1
-				
-  </div>
 </div>
 `;
 
-exports[`Subslot Should emit "no-match" on no match 1`] = `
-<div
-  class="card"
->
-  <div
-    class="card-header"
-  >
-    <!---->
-  </div>
-</div>
-`;
-
-exports[`Subslot Should enforce limit 1`] = `
-<div
-  class="card"
->
-  <div>
-    
-						Header
-					
-  </div>
-  <div>
-    
-						Header
-					
-  </div>
-  <div>
-    
-						Header
-					
-  </div>
-</div>
-`;
-
-exports[`Subslot Should enforce offset 1`] = `
-<div
-  class="card"
->
-  <div>
-    
-						Header 4
-					
-  </div>
-  <div>
-    
-						Header 5
-					
-  </div>
-  <div>
-    
-						Header 6
-					
-  </div>
-</div>
-`;
-
-exports[`Subslot Should support array index 1`] = `
-<div
-  class="card"
->
-  <div
-    class="card-header"
-  >
-    <div>
-      
-						Header 3
-					
-    </div>
-    <div>
-      
-						Header 4
-					
-    </div>
-    <div>
-      
-						Header 5
-					
-    </div>
-    <div>
-      
-						Header 6
-					
-    </div>
-    <div>
-      
-						Header 7
-					
-    </div>
-    <div>
-      
-						Header 8
-					
-    </div>
-    <div>
-      
-						Header 9
-					
-    </div>
-    <div>
-      
-						Header 10
-					
-    </div>
-  </div>
-   
-  <div
-    class="card-content"
-  >
-    <div>
-      
-						Header 1
-					
-    </div>
-    <div>
-      
-						Header 2
-					
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Subslot Should support array slicing 1`] = `
-<div
-  class="card"
->
-  <div
-    class="card-header"
-  >
-    <div>
-      
-						Header 3
-					
-    </div>
-    <div>
-      
-						Header 4
-					
-    </div>
-  </div>
-   
-  <div
-    class="card-content"
-  >
-    <div>
-      
-						Header 1
-					
-    </div>
-    <div>
-      
-						Header 2
-					
-    </div>
-    <div>
-      
-						Header 5
-					
-    </div>
-    <div>
-      
-						Header 6
-					
-    </div>
-    <div>
-      
-						Header 7
-					
-    </div>
-    <div>
-      
-						Header 8
-					
-    </div>
-    <div>
-      
-						Header 9
-					
-    </div>
-    <div>
-      
-						Header 10
-					
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Subslot Should support element as a direct reference 1`] = `
-<div
-  class="card"
->
-  <div
-    class="card-header"
-  >
-    <div>
-      
-						Header
-					
-    </div>
-  </div>
-   
-  <div
-    class="card-content"
-  >
-    
-
-					Content
-				
-  </div>
-</div>
-`;
-
-exports[`Subslot Should support filter attributes 1`] = `
-<div
-  class="card"
->
-  <div
-    class="card-header"
-  >
-    <div>
-      
-						Header
-					
-    </div>
-  </div>
-   
-  <div
-    class="card-content"
-  >
-    
-
-					Content
-				
-  </div>
-</div>
-`;
-
-exports[`Subslot Should support named subslots 1`] = `
+exports[`$subslots support Normal usage 1`] = `
 <div
   class="card"
 >
@@ -307,7 +54,242 @@ exports[`Subslot Should support named subslots 1`] = `
 </div>
 `;
 
-exports[`Subslot Should use fallback 1`] = `
+exports[`$subslots support Reactive subslots 1`] = `
+<div
+  class="card"
+>
+  <div
+    class="card-header"
+  >
+    <div>
+      
+						Header is reactive!
+					
+    </div>
+  </div>
+   
+  <div
+    class="card-content"
+  >
+    
+
+					Content is reactive!
+				
+  </div>
+</div>
+`;
+
+exports[`$subslots support Should emit "no-match" on no match 1`] = `
+<div
+  class="card"
+>
+  <div
+    class="card-header"
+  >
+    <!---->
+  </div>
+</div>
+`;
+
+exports[`$subslots support Should support slice index 1`] = `
+<div
+  class="card"
+>
+  <div
+    class="card-header"
+  >
+    <div>
+      
+						Header 3
+					
+    </div>
+    <div>
+      
+						Header 4
+					
+    </div>
+    <div>
+      
+						Header 5
+					
+    </div>
+    <div>
+      
+						Header 6
+					
+    </div>
+    <div>
+      
+						Header 7
+					
+    </div>
+    <div>
+      
+						Header 8
+					
+    </div>
+    <div>
+      
+						Header 9
+					
+    </div>
+    <div>
+      
+						Header 10
+					
+    </div>
+  </div>
+   
+  <div
+    class="card-content"
+  >
+    <div>
+      
+						Header 1
+					
+    </div>
+    <div>
+      
+						Header 2
+					
+    </div>
+  </div>
+</div>
+`;
+
+exports[`$subslots support Should support slice with limit 1`] = `
+<div
+  class="card"
+>
+  <div
+    class="card-header"
+  >
+    <div>
+      
+						Header 3
+					
+    </div>
+    <div>
+      
+						Header 4
+					
+    </div>
+  </div>
+   
+  <div
+    class="card-content"
+  >
+    <div>
+      
+						Header 1
+					
+    </div>
+    <div>
+      
+						Header 2
+					
+    </div>
+    <div>
+      
+						Header 5
+					
+    </div>
+    <div>
+      
+						Header 6
+					
+    </div>
+    <div>
+      
+						Header 7
+					
+    </div>
+    <div>
+      
+						Header 8
+					
+    </div>
+    <div>
+      
+						Header 9
+					
+    </div>
+    <div>
+      
+						Header 10
+					
+    </div>
+  </div>
+</div>
+`;
+
+exports[`$subslots support Should support slice with no offset 1`] = `
+<div
+  class="card"
+>
+  <div
+    class="card-header"
+  >
+    <div>
+      
+						Header 1
+					
+    </div>
+    <div>
+      
+						Header 2
+					
+    </div>
+  </div>
+   
+  <div
+    class="card-content"
+  >
+    <div>
+      
+						Header 3
+					
+    </div>
+    <div>
+      
+						Header 4
+					
+    </div>
+    <div>
+      
+						Header 5
+					
+    </div>
+    <div>
+      
+						Header 6
+					
+    </div>
+    <div>
+      
+						Header 7
+					
+    </div>
+    <div>
+      
+						Header 8
+					
+    </div>
+    <div>
+      
+						Header 9
+					
+    </div>
+    <div>
+      
+						Header 10
+					
+    </div>
+  </div>
+</div>
+`;
+
+exports[`$subslots support Should use fallback 1`] = `
 <div
   class="card"
 >
