@@ -1,0 +1,95 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Subslot Should enforce offset of 3 1`] = `
+<div
+  class="card"
+>
+  <div>
+    
+						Header 4
+					
+  </div>
+  <div>
+    
+						Header 5
+					
+  </div>
+  <div>
+    
+						Header 6
+					
+  </div>
+</div>
+`;
+
+exports[`Subslot Should only be 3 CardHeaders 1`] = `
+<div
+  class="card"
+>
+  <div>
+    
+						Header
+					
+  </div>
+  <div>
+    
+						Header
+					
+  </div>
+  <div>
+    
+						Header
+					
+  </div>
+</div>
+`;
+
+exports[`Subslot Should support element as a direct reference 1`] = `
+<div
+  class="card"
+>
+  <div
+    class="card-header"
+  >
+    <div>
+      
+						Header
+					
+    </div>
+  </div>
+   
+  <div
+    class="card-content"
+  >
+    
+
+					Content
+				
+  </div>
+</div>
+`;
+
+exports[`Subslot Should support filter attributes 1`] = `
+<div
+  class="card"
+>
+  <div
+    class="card-header"
+  >
+    <div>
+      
+						Header
+					
+    </div>
+  </div>
+   
+  <div
+    class="card-content"
+  >
+    
+
+					Content
+				
+  </div>
+</div>
+`;
