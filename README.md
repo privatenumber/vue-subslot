@@ -159,6 +159,13 @@ Pass in an array
 <subslot :element="[ChildComponentA, '@ChildComponentB', 'div']" />
 ```
 
+### To match any element
+Use the asterisk to match any element. This is to match only elements and remove any text/white-space.
+
+```html
+<subslot element="*" />
+```
+
 ### Offset the number of returned elements
 ```html
 <subslot
