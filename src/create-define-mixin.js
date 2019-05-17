@@ -51,7 +51,7 @@ const genSubSlots = ({ sslotDef, vnodes, vm }) => {
 			return slots;
 		}, {
 			default: vnodes.slice(0),
-			_original: vnodes,
+			// _original: vnodes,
 		});
 };
 
@@ -66,7 +66,7 @@ export default function createDefineMixin(sslotDef) {
 	}
 
 	return {
-		beforeCreate: generateSubslots,
+		created: generateSubslots,
 		beforeUpdate: generateSubslots,
 	};
 };
