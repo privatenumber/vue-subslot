@@ -69,4 +69,4 @@ export default function createDefineMixin(sslotDef) {
 		created: generateSubslots,
 		beforeUpdate: generateSubslots,
 	};
-};
+}
