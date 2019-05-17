@@ -1,32 +1,38 @@
 const getWhitelist = ({ vm, filter }) => {
+	let matchAll = false;
 	const components = [];
 	const tags = [];
 	const elements = Array.isArray(filter.element) ? filter.element : [filter.element];
 
 	elements.forEach((element) => {
 		if (typeof element === 'string') {
-			if (element[0] === '@') {
+			if (element === '*') {
+				matchAll = true;
+			} else if (element[0] === '@') {
 				const component = vm.$options.components[element.slice(1)];
 				if (component) {
 					components.push(component);
 				}
-				return;
+			} else {
+				tags.push(element);
 			}
-			tags.push(element);
-			return;
+		} else {
+			components.push(element);
 		}
-
-		components.push(element);
 	});
 
-	return { components, tags };
+	return { matchAll, components, tags };
 };
 
 export const filterVnodes = ({ vnodes, filter, vm }) => {
 
 	if (filter.element) {
-		const { components, tags } = getWhitelist({ vm, filter });
+		const { matchAll, components, tags } = getWhitelist({ vm, filter });
 		vnodes = vnodes.filter((vnode) => {
+			if (matchAll) {
+				return vnode.tag;
+			}
+
 			const isComponent = (vnode.componentOptions && vnode.componentOptions.Ctor.extendOptions);
 			const { tag } = vnode.componentOptions || vnode;
 
