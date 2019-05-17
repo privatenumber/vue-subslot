@@ -91,6 +91,33 @@ exports[`$subslots support Should emit "no-match" on no match 1`] = `
 </div>
 `;
 
+exports[`$subslots support Should support define w/ attributes 1`] = `
+<div
+  class="card"
+>
+  <div
+    class="card-header"
+  >
+    <div>
+      
+						Header 2
+					
+    </div>
+    <div>
+      
+						Header 3
+					
+    </div>
+  </div>
+   
+  <div
+    class="card-content"
+  >
+    <!---->
+  </div>
+</div>
+`;
+
 exports[`$subslots support Should support slice index 1`] = `
 <div
   class="card"

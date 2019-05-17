@@ -380,6 +380,55 @@ describe('$subslots support', () => {
 		const wrapper = mount(usage);
 		expect(wrapper.element).toMatchSnapshot();
 	});
+
+	test('Should support define w/ attributes', () => {
+		const Card = {
+			template: `
+				<div class="card">
+					<div class="card-header">
+						<subslot name="cardHeader" offset="1" limit="2" />
+					</div>
+
+					<div class="card-content">
+						<subslot />
+					</div>
+				</div>
+			`,
+
+			components: {
+				Subslot,
+			},
+
+			mixins: [
+				Subslot.define({
+					cardHeader: {
+						element: CardHeader,
+					},
+				}),
+			],
+		};
+
+		const usage = {
+			template: `
+				<card>
+					<card-header
+						v-for="i in 10"
+						:key="i"
+					>
+						Header {{ i }}
+					</card-header>
+				</card>
+			`,
+			components: {
+				Card,
+				CardHeader,
+			},
+		};
+
+		const wrapper = mount(usage);
+		expect(wrapper.element).toMatchSnapshot();
+	});
+
 	test('Should emit "no-match" on no match', () => {
 		const onNoCardHeader = jest.fn();
 
