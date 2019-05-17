@@ -39,12 +39,13 @@ export default {
 			vnodes = parent.$subslots[props.name];
 		} else {
 			vnodes = ctx.props.vnodes || ctx.parent.$slots.default || [];
-			vnodes = filterVnodes({
-				vnodes,
-				filter: props,
-				vm: parent,
-			});
 		}
+
+		vnodes = filterVnodes({
+			vnodes,
+			filter: props,
+			vm: parent,
+		});
 
 		if (!vnodes || vnodes.length === 0) {
 			emit(ctx, 'no-match');
