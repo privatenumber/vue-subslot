@@ -90,6 +90,74 @@ describe('Subslot', () => {
 		expect(wrapper.element).toMatchSnapshot();
 	});
 
+	test('Should render all', () => {
+		const Card = {
+			template: `
+				<div class="card">
+					<subslot />
+				</div>
+			`,
+
+			components: {
+				Subslot,
+			},
+
+			data() {
+				return {
+					CardHeader,
+				};
+			},
+		};
+
+		const usage = {
+			template: `
+				<card>
+					<div>Should render</div>
+					<span>Should render</span>
+					<button>Should render</button>
+				</card>
+			`,
+			components: { Card },
+		};
+
+		const wrapper = mount(usage);
+		expect(wrapper.element).toMatchSnapshot();
+	});
+
+	test('Should support tag', () => {
+		const Card = {
+			template: `
+				<div class="card">
+					<subslot element="button" limit="1" />
+				</div>
+			`,
+
+			components: {
+				Subslot,
+			},
+
+			data() {
+				return {
+					CardHeader,
+				};
+			},
+		};
+
+		const usage = {
+			template: `
+				<card>
+					<div>Shouldn't render</div>
+					<span>Shouldn't render</span>
+					<button>Should render</button>
+				</card>
+			`,
+			components: { Card },
+		};
+
+		const wrapper = mount(usage);
+		expect(wrapper.element).toMatchSnapshot();
+	});
+
 	test('Should only be 3 CardHeaders', () => {
 		const Card = {
 			template: `
@@ -167,4 +235,40 @@ describe('Subslot', () => {
 		expect(wrapper.element).toMatchSnapshot();
 	});
 
+	test('Should enforce offset and limit without element', () => {
+		const Card = {
+			template: `
+				<div>
+					<subslot
+						offset="3"
+						limit="3"
+					/>
+				</div>
+			`,
+
+			components: {
+				Subslot,
+				CardHeader,
+			},
+		};
+
+		const usage = {
+			template: `
+				<card>
+					<div
+						v-for="i in 10"
+						:key="i"
+					>
+						Header {{ i }}
+					</div>
+				</card>
+			`,
+			components: {
+				Card,
+			},
+		};
+
+		const wrapper = mount(usage);
+		expect(wrapper.element).toMatchSnapshot();
+	});
 });

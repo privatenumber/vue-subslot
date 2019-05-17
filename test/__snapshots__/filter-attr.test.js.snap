@@ -1,5 +1,25 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Subslot Should enforce offset and limit without element 1`] = `
+<div>
+  <div>
+    
+						Header 4
+					
+  </div>
+  <div>
+    
+						Header 5
+					
+  </div>
+  <div>
+    
+						Header 6
+					
+  </div>
+</div>
+`;
+
 exports[`Subslot Should enforce offset of 3 1`] = `
 <div
   class="card"
@@ -41,6 +61,24 @@ exports[`Subslot Should only be 3 CardHeaders 1`] = `
 						Header
 					
   </div>
+</div>
+`;
+
+exports[`Subslot Should render all 1`] = `
+<div
+  class="card"
+>
+  <div>
+    Should render
+  </div>
+   
+  <span>
+    Should render
+  </span>
+   
+  <button>
+    Should render
+  </button>
 </div>
 `;
 
@@ -91,5 +129,15 @@ exports[`Subslot Should support filter attributes 1`] = `
 					Content
 				
   </div>
+</div>
+`;
+
+exports[`Subslot Should support tag 1`] = `
+<div
+  class="card"
+>
+  <button>
+    Should render
+  </button>
 </div>
 `;

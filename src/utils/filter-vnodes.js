@@ -23,19 +23,21 @@ const getWhitelist = ({ vm, filter }) => {
 };
 
 export const filterVnodes = ({ vnodes, filter, vm }) => {
-	const { components, tags } = getWhitelist({ vm, filter });
 
-	vnodes = vnodes.filter((vnode) => {
-		const isComponent = (vnode.componentOptions && vnode.componentOptions.Ctor.extendOptions);
-		const { tag } = vnode.componentOptions || vnode;
+	if (filter.element) {
+		const { components, tags } = getWhitelist({ vm, filter });
+		vnodes = vnodes.filter((vnode) => {
+			const isComponent = (vnode.componentOptions && vnode.componentOptions.Ctor.extendOptions);
+			const { tag } = vnode.componentOptions || vnode;
 
-		const elementMatch = (
-			(isComponent && components.includes(isComponent))
-			|| (tag && tags.includes(tag))
-		);
+			const elementMatch = (
+				(isComponent && components.includes(isComponent))
+				|| (tag && tags.includes(tag))
+			);
 
-		return filter.not ? !elementMatch : elementMatch;
-	});
+			return filter.not ? !elementMatch : elementMatch;
+		});
+	}
 
 	if (filter.offset) {
 		vnodes = vnodes.slice(filter.offset);
