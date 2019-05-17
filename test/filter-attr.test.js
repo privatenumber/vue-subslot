@@ -158,6 +158,40 @@ describe('Subslot', () => {
 		expect(wrapper.element).toMatchSnapshot();
 	});
 
+	test('Should support wildcard', () => {
+		const Card = {
+			template: `
+				<div class="card">
+					<subslot element="*" />
+				</div>
+			`,
+
+			components: {
+				Subslot,
+			},
+
+			data() {
+				return {
+					CardHeader,
+				};
+			},
+		};
+
+		const usage = {
+			template: `
+				<card>
+					Shouldn't render
+					<span>Should render</span>
+					Shouldn't render
+				</card>
+			`,
+			components: { Card },
+		};
+
+		const wrapper = mount(usage);
+		expect(wrapper.element).toMatchSnapshot();
+	});
+
 	test('Should only be 3 CardHeaders', () => {
 		const Card = {
 			template: `

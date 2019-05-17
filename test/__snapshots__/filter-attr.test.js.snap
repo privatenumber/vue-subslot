@@ -141,3 +141,13 @@ exports[`Subslot Should support tag 1`] = `
   </button>
 </div>
 `;
+
+exports[`Subslot Should support wildcard 1`] = `
+<div
+  class="card"
+>
+  <span>
+    Should render
+  </span>
+</div>
+`;
