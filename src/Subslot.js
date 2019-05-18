@@ -2,6 +2,8 @@ import { emit } from './utils/emit';
 import { filterVnodes } from './utils/filter-vnodes';
 import createDefineMixin from './create-define-mixin';
 
+const validInt = val => !Number.isNaN(parseInt(val, 10));
+
 export default {
 	functional: true,
 	props: {
@@ -14,11 +16,11 @@ export default {
 		offset: {
 			type: [String, Number],
 			default: 0,
-			validator: val => !Number.isNaN(parseInt(val, 10)),
+			validator: validInt,
 		},
 		limit: {
 			type: [String, Number],
-			validator: val => !Number.isNaN(parseInt(val, 10)),
+			validator: validInt,
 		},
 		vnodes: {
 			type: null,
