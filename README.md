@@ -8,7 +8,7 @@
 	<br>
 </p>
 
-> Use [Subslot](https://npm.im/vue-subslot) in your Vue component to gain _finer control_ over your slots and to offer a _richer slot API_.
+> Use [Subslot](https://npm.im/vue-subslot) in your Vue component to pick and choose what you want from a slot.
 
 ## :rocket: Quick setup
 
