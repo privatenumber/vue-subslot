@@ -66,6 +66,7 @@ export default function createDefineMixin(sslotDef) {
 	}
 
 	return {
+		// TODO: Register Subslot component
 		created: generateSubslots,
 		beforeUpdate: generateSubslots,
 	};
