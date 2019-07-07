@@ -1,10 +1,8 @@
 import { mount } from '@vue/test-utils';
 import Subslot from 'vue-subslot';
 import CardHeader from './fixtures/CardHeader.vue';
-import CardFooter from './fixtures/CardFooter.vue';
 
 describe('Subslot', () => {
-
 	test('Should support filter attributes', () => {
 		const Card = {
 			template: `
