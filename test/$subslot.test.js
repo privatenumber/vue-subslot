@@ -4,7 +4,6 @@ import CardHeader from './fixtures/CardHeader.vue';
 import CardFooter from './fixtures/CardFooter.vue';
 
 describe('$subslots support', () => {
-
 	test('Normal usage', () => {
 		const Card = {
 			template: `
