@@ -2,7 +2,7 @@ import { emit } from './utils/emit';
 import { filterVnodes } from './utils/filter-vnodes';
 import createDefineMixin from './create-define-mixin';
 
-const validInt = val => !Number.isNaN(parseInt(val, 10));
+const validInt = (val) => !Number.isNaN(parseInt(val, 10));
 
 export default {
 	functional: true,
