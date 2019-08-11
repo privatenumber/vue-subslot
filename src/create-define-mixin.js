@@ -42,7 +42,7 @@ const genSubSlots = ({ sslotDef, vnodes, vm }) => {
 				vm,
 			});
 
-			filtered.forEach(vn => arrRemove(slots.default, vn));
+			filtered.forEach((vn) => arrRemove(slots.default, vn));
 
 			if (filtered.length) {
 				slots[name] = filtered;
