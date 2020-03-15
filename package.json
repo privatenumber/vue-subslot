@@ -17,7 +17,7 @@
     "dev-build": "rollup -cw",
     "dev": "jest --watch",
     "test": "jest",
-    "lint": "eslint {src,test}",
+    "lint": "eslint --ext js,vue .",
     "version": "npm run build && git add dist"
   },
   "husky": {
@@ -37,6 +37,7 @@
     "eslint": "^6.8.0",
     "eslint-config-airbnb-base": "^14.1.0",
     "eslint-plugin-import": "^2.20.1",
+    "eslint-plugin-vue": "^6.2.2",
     "husky": "^4.2.3",
     "jest": "^25.1.0",
     "jest-serializer-vue": "^2.0.2",
