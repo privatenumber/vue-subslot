@@ -1,5 +1,5 @@
-import { arrRemove } from './utils/arr-remove';
-import { filterVnodes } from './utils/filter-vnodes';
+import arrRemove from './utils/arr-remove';
+import filterVnodes from './utils/filter-vnodes';
 
 const arrPtrn = /(.+)\[(\d?)(?::(\d+))?\]$/;
 const createFilter = (strFilter) => {
