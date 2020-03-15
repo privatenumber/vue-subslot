@@ -1,6 +1,9 @@
 {
 	"root": true,
-	"extends": "airbnb-base",
+	"extends": [
+		"airbnb-base",
+		"plugin:vue/recommended"
+	],
 	"rules": {
 		"indent": "off",
 		"indent-legacy": ["error", "tab"],
