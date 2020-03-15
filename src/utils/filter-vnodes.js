@@ -24,7 +24,7 @@ const getWhitelist = ({ vm, filter }) => {
 	return { matchAll, components, tags };
 };
 
-export const filterVnodes = ({ vnodes, filter, vm }) => {
+const filterVnodes = ({ vnodes, filter, vm }) => {
 	if (filter.element) {
 		const { matchAll, components, tags } = getWhitelist({ vm, filter });
 		vnodes = vnodes.filter((vnode) => {
@@ -54,3 +54,5 @@ export const filterVnodes = ({ vnodes, filter, vm }) => {
 
 	return vnodes;
 };
+
+export default filterVnodes;
