@@ -1,4 +1,5 @@
 import { mount } from '@vue/test-utils';
+import Vue from 'vue';
 import Subslot from 'vue-subslot';
 import CardHeader from './fixtures/CardHeader.vue';
 import CardFooter from './fixtures/CardFooter.vue';
@@ -133,7 +134,7 @@ describe('$subslots support', () => {
 		expect(wrapper.element).toMatchSnapshot();
 	});
 
-	test('Reactive subslots', () => {
+	test('Reactive subslots', async () => {
 		const Card = {
 			template: `
 				<div class="card">
@@ -187,10 +188,11 @@ describe('$subslots support', () => {
 
 		const wrapper = mount(usage);
 		wrapper.vm.increment();
+		await Vue.nextTick();
 		expect(wrapper.element).toMatchSnapshot();
 	});
 
-	test('Fallback reactive', () => {
+	test('Fallback reactive', async () => {
 		const Card = {
 			template: `
 				<div class="card">
@@ -233,6 +235,7 @@ describe('$subslots support', () => {
 		};
 
 		const wrapper = mount(usage);
+		await Vue.nextTick();
 		expect(wrapper.element).toMatchSnapshot();
 	});
 
