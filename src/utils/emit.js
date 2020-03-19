@@ -1,7 +1,8 @@
-const emit = (ctx, eventName, ...args) => {
+const emit = function (ctx, eventName, /*...args*/) {
 	const eventHandler = ctx.listeners[eventName];
 	if (typeof eventHandler === 'function') {
-		eventHandler(...args);
+		const args = Array.from(arguments).slice(2);
+		eventHandler.apply(this, args);
 	}
 };
 
