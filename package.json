@@ -1,7 +1,7 @@
 {
   "name": "vue-subslot",
   "version": "1.2.1",
-  "description": "Reads and filters $slots.default automatically.",
+  "description": "💍Vue component to pick 'n choose what you want from a slot",
   "license": "MIT",
   "repository": {
     "type": "git",
