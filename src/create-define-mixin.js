@@ -16,7 +16,9 @@ const createFilter = (strFilter) => {
 			return '';
 		});
 	} else {
-		[element, limit] = strFilter.split(':');
+		const filterSplit = strFilter.split(':');
+		element = filterSplit[0];
+		limit = filterSplit[1];
 	}
 
 	if (element[0] === '!') {
@@ -35,7 +37,9 @@ const genSubSlots = ({ sslotDef, vnodes, vm }) => {
 	if (!vnodes) { return {}; }
 
 	return Object.entries(sslotDef)
-		.reduce((slots, [name, def]) => {
+		.reduce((slots, entry) => {
+			const name = entry[0];
+			const def = entry[1];
 			const filtered = filterVnodes({
 				filter: typeof def === 'string' ? createFilter(def) : def,
 				vnodes,
