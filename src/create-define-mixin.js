@@ -2,7 +2,7 @@ import arrRemove from './utils/arr-remove';
 import filterVnodes from './utils/filter-vnodes';
 
 const arrPtrn = /(.+)\[(\d?)(?::(\d+))?\]$/;
-const createFilter = (strFilter) => {
+const parseFilterStr = (strFilter) => {
 	let not = false;
 	let element;
 	let offset = 0;
@@ -41,7 +41,7 @@ const genSubSlots = ({ sslotDef, vnodes, vm }) => {
 			const name = entry[0];
 			const def = entry[1];
 			const filtered = filterVnodes({
-				filter: typeof def === 'string' ? createFilter(def) : def,
+				filter: typeof def === 'string' ? parseFilterStr(def) : def,
 				vnodes,
 				vm,
 			});
