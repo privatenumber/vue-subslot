@@ -10,26 +10,10 @@
 
 > Use [Subslot](https://npm.im/vue-subslot) in your Vue component to pick and choose what you want from a slot
 
-## :rocket: Quick setup
-
-#### Install
+## :rocket: Installation
 ```sh
 npm i vue-subslot
 ```
-
-#### Import and use as a Vue component
-```js
-import Subslot from 'vue-subslot';
-
-export default {
-	...
-	components: {
-		Subslot
-	}
-	...
-}
-```
-
 
 ## :beginner: Use case
 Have you ever developed a parent-child component set, and wanted to allow users to pass in the child-component without specifiying a slot but still have the same level of control as named-slots? With Subslot, you can!
@@ -210,3 +194,6 @@ Like normal slots, what you pass into the slot of `subslot` will be the fallback
 	element="@ChildComponent"
 />
 ```
+
+## Related
+- [vue-pseudo-window](https://github.com/privatenumber/vue-pseudo-window) - 🖼 Declaratively interface window/document in your Vue template
