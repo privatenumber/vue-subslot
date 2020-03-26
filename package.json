@@ -1,17 +1,28 @@
 {
   "name": "vue-subslot",
   "version": "1.2.2",
-  "description": "💍Vue component to pick 'n choose what you want from a slot",
+  "description": "💍 Pick 'n choose what you want from a slot passed into your Vue component",
+  "keywords": [
+    "vue",
+    "filter",
+    "slot",
+    "vnode",
+    "component"
+  ],
+  "author": "Hiroki Osame <hiroki.osame@gmail.com>",
   "license": "MIT",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/privatenumber/vue-subslot.git"
   },
-  "author": "Hiroki Osame <hiroki.osame@gmail.com>",
   "bugs": {
     "url": "https://github.com/privatenumber/vue-subslot/issues"
   },
   "homepage": "https://github.com/privatenumber/vue-subslot#readme",
+  "files": [
+    "dist"
+  ],
+  "main": "dist/Subslot.js",
   "scripts": {
     "build": "rollup -c --environment NODE_ENV:production",
     "dev-build": "rollup -cw",
@@ -25,10 +36,6 @@
       "pre-commit": "npm test"
     }
   },
-  "files": [
-    "dist"
-  ],
-  "main": "dist/Subslot.js",
   "devDependencies": {
     "@babel/core": "^7.8.7",
     "@babel/plugin-transform-runtime": "^7.8.3",
