@@ -8,7 +8,7 @@
 	<br>
 </p>
 
-> Use [Subslot](https://npm.im/vue-subslot) in your Vue component to pick and choose what you want from a slot.
+> Use [Subslot](https://npm.im/vue-subslot) in your Vue component to pick and choose what you want from a slot
 
 ## :rocket: Quick setup
 
