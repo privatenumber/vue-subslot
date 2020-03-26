@@ -40,7 +40,7 @@ export default {
 		if (parent.$subslots) {
 			vnodes = parent.$subslots[props.name];
 		} else {
-			vnodes = ctx.props.vnodes || ctx.parent.$slots.default || [];
+			vnodes = props.vnodes || parent.$slots.default || [];
 		}
 
 		vnodes = filterVnodes({
