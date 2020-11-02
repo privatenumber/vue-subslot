@@ -229,6 +229,15 @@ Like normal slots, what you pass into the slot of `subslot` will be the fallback
 />
 ```
 
+## 💁‍♀️ FAQ
+
+### Will this work for functional components passed into the slot?
+
+Unfortunately not due to Vue.js' design.
+
+Functional components are stateless so they're immediately invoked and the output is passed into the slot instead of the "functional component". Because Subslot doesn't actually receive the functional component, it's impossible to detect them.
+
+
 ## 👨‍👩‍👧 Related
 - [vue-proxi](https://github.com/privatenumber/vue-proxi) - 💠 Tiny proxy component
 - [vue-vnode-syringe](https://github.com/privatenumber/vue-vnode-syringe) - 🧬 Add attributes and event-listeners to `<slot>` content 💉
