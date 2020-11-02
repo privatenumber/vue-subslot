@@ -42,7 +42,7 @@ describe('$subslots support', () => {
 			],
 		};
 
-		const usage = {
+		const wrapper = mount({
 			template: `
 				<card>
 					<card-header>
@@ -61,9 +61,7 @@ describe('$subslots support', () => {
 				CardHeader,
 				CardFooter,
 			},
-		};
-
-		const wrapper = mount(usage);
+		});
 		expect(wrapper.element).toMatchSnapshot();
 	});
 
@@ -92,12 +90,10 @@ describe('$subslots support', () => {
 			],
 		};
 
-		const usage = {
+		const wrapper = mount({
 			template: '<card>Content</card>',
 			components: {Card},
-		};
-
-		const wrapper = mount(usage);
+		});
 		expect(wrapper.element).toMatchSnapshot();
 	});
 
@@ -125,12 +121,10 @@ describe('$subslots support', () => {
 			],
 		};
 
-		const usage = {
+		const wrapper = mount({
 			template: '<card>Content</card>',
 			components: {Card},
-		};
-
-		const wrapper = mount(usage);
+		});
 		expect(wrapper.element).toMatchSnapshot();
 	});
 
@@ -159,7 +153,7 @@ describe('$subslots support', () => {
 			],
 		};
 
-		const usage = {
+		const wrapper = mount({
 			template: `
 				<card>
 					<card-header>
@@ -184,9 +178,7 @@ describe('$subslots support', () => {
 					this.msg = 'is reactive!';
 				},
 			},
-		};
-
-		const wrapper = mount(usage);
+		});
 		wrapper.vm.increment();
 		await Vue.nextTick();
 		expect(wrapper.element).toMatchSnapshot();
@@ -222,7 +214,7 @@ describe('$subslots support', () => {
 			},
 		};
 
-		const usage = {
+		const wrapper = mount({
 			template: `
 			<card>
 				Content
@@ -232,9 +224,7 @@ describe('$subslots support', () => {
 				Card,
 				CardHeader,
 			},
-		};
-
-		const wrapper = mount(usage);
+		});
 		await Vue.nextTick();
 		expect(wrapper.element).toMatchSnapshot();
 	});
@@ -265,7 +255,7 @@ describe('$subslots support', () => {
 			],
 		};
 
-		const usage = {
+		const wrapper = mount({
 			template: `
 				<card>
 					<card-header
@@ -281,9 +271,7 @@ describe('$subslots support', () => {
 				CardHeader,
 				CardFooter,
 			},
-		};
-
-		const wrapper = mount(usage);
+		});
 		expect(wrapper.element).toMatchSnapshot();
 	});
 
@@ -313,7 +301,7 @@ describe('$subslots support', () => {
 			],
 		};
 
-		const usage = {
+		const wrapper = mount({
 			template: `
 				<card>
 					<card-header
@@ -329,9 +317,7 @@ describe('$subslots support', () => {
 				CardHeader,
 				CardFooter,
 			},
-		};
-
-		const wrapper = mount(usage);
+		});
 		expect(wrapper.element).toMatchSnapshot();
 	});
 
@@ -361,7 +347,7 @@ describe('$subslots support', () => {
 			],
 		};
 
-		const usage = {
+		const wrapper = mount({
 			template: `
 				<card>
 					<card-header
@@ -377,9 +363,7 @@ describe('$subslots support', () => {
 				CardHeader,
 				CardFooter,
 			},
-		};
-
-		const wrapper = mount(usage);
+		});
 		expect(wrapper.element).toMatchSnapshot();
 	});
 
@@ -410,7 +394,7 @@ describe('$subslots support', () => {
 			],
 		};
 
-		const usage = {
+		const wrapper = mount({
 			template: `
 				<card>
 					<card-header
@@ -425,9 +409,7 @@ describe('$subslots support', () => {
 				Card,
 				CardHeader,
 			},
-		};
-
-		const wrapper = mount(usage);
+		});
 		expect(wrapper.element).toMatchSnapshot();
 	});
 
@@ -462,12 +444,10 @@ describe('$subslots support', () => {
 			},
 		};
 
-		const usage = {
+		const wrapper = mount({
 			template: '<card>Content</card>',
 			components: {Card},
-		};
-
-		const wrapper = mount(usage);
+		});
 		expect(onNoCardHeader).toBeCalled();
 		expect(wrapper.element).toMatchSnapshot();
 	});
