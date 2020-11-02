@@ -120,7 +120,7 @@ export default {
 ```
 
 
-## :book: API
+## 📖 API
 
 ### Filter by element tag
 As a string, it filters the vnodes by tag (as opposed to component)
@@ -189,11 +189,11 @@ Like normal slots, what you pass into the slot of `subslot` will be the fallback
 </subslot>
 ```
 
-## :loop: Events
+## 📬 Events
 - `@no-match`: Emitted when there are no matching vnodes
 
 
-## :zap: Advanced usage
+## ⚡ Advanced usage
 
 ### Pass in vnodes from a difference source
 ```html
