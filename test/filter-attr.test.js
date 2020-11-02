@@ -23,7 +23,7 @@ describe('Subslot', () => {
 			},
 		};
 
-		const usage = {
+		const wrapper = mount({
 			template: `
 				<card>
 					<card-header>
@@ -37,9 +37,7 @@ describe('Subslot', () => {
 				Card,
 				CardHeader,
 			},
-		};
-
-		const wrapper = mount(usage);
+		});
 		expect(wrapper.element).toMatchSnapshot();
 	});
 
@@ -68,7 +66,7 @@ describe('Subslot', () => {
 			},
 		};
 
-		const usage = {
+		const wrapper = mount({
 			template: `
 				<card>
 					<card-header>
@@ -82,9 +80,7 @@ describe('Subslot', () => {
 				Card,
 				CardHeader,
 			},
-		};
-
-		const wrapper = mount(usage);
+		});
 		expect(wrapper.element).toMatchSnapshot();
 	});
 
@@ -107,7 +103,7 @@ describe('Subslot', () => {
 			},
 		};
 
-		const usage = {
+		const wrapper = mount({
 			template: `
 				<card>
 					<div>Should render</div>
@@ -116,9 +112,7 @@ describe('Subslot', () => {
 				</card>
 			`,
 			components: {Card},
-		};
-
-		const wrapper = mount(usage);
+		});
 		expect(wrapper.element).toMatchSnapshot();
 	});
 
@@ -141,7 +135,7 @@ describe('Subslot', () => {
 			},
 		};
 
-		const usage = {
+		const wrapper = mount({
 			template: `
 				<card>
 					<div>Shouldn't render</div>
@@ -150,9 +144,7 @@ describe('Subslot', () => {
 				</card>
 			`,
 			components: {Card},
-		};
-
-		const wrapper = mount(usage);
+		});
 		expect(wrapper.element).toMatchSnapshot();
 	});
 
@@ -175,7 +167,7 @@ describe('Subslot', () => {
 			},
 		};
 
-		const usage = {
+		const wrapper = mount({
 			template: `
 				<card>
 					Shouldn't render
@@ -184,9 +176,7 @@ describe('Subslot', () => {
 				</card>
 			`,
 			components: {Card},
-		};
-
-		const wrapper = mount(usage);
+		});
 		expect(wrapper.element).toMatchSnapshot();
 	});
 
@@ -207,7 +197,7 @@ describe('Subslot', () => {
 			},
 		};
 
-		const usage = {
+		const wrapper = mount({
 			template: `
 				<card>
 					<card-header
@@ -222,9 +212,7 @@ describe('Subslot', () => {
 				Card,
 				CardHeader,
 			},
-		};
-
-		const wrapper = mount(usage);
+		});
 		expect(wrapper.element).toMatchSnapshot();
 	});
 
@@ -246,7 +234,7 @@ describe('Subslot', () => {
 			},
 		};
 
-		const usage = {
+		const wrapper = mount({
 			template: `
 				<card>
 					<card-header
@@ -261,9 +249,7 @@ describe('Subslot', () => {
 				Card,
 				CardHeader,
 			},
-		};
-
-		const wrapper = mount(usage);
+		});
 		expect(wrapper.element).toMatchSnapshot();
 	});
 
@@ -284,7 +270,7 @@ describe('Subslot', () => {
 			},
 		};
 
-		const usage = {
+		const wrapper = mount({
 			template: `
 				<card>
 					<div
@@ -298,9 +284,7 @@ describe('Subslot', () => {
 			components: {
 				Card,
 			},
-		};
-
-		const wrapper = mount(usage);
+		});
 		expect(wrapper.element).toMatchSnapshot();
 	});
 });
