@@ -4,7 +4,7 @@ import filesize from 'rollup-plugin-filesize';
 
 const isProd = process.env.NODE_ENV === 'production';
 
-export default {
+const rollupConfig = {
 	input: 'src/Subslot.js',
 	plugins: [
 		babel({
@@ -20,3 +20,5 @@ export default {
 		name: 'Subslot',
 	},
 };
+
+export default rollupConfig;
