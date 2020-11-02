@@ -4,7 +4,6 @@
 	<br><br>
 	<a href="https://npm.im/vue-subslot"><img src="https://badgen.net/npm/v/vue-subslot"></a>
 	<a href="https://npm.im/vue-subslot"><img src="https://badgen.net/npm/dm/vue-subslot"></a>
-	<a href="https://packagephobia.now.sh/result?p=vue-subslot"><img src="https://packagephobia.now.sh/badge?p=vue-subslot"></a>
 	<a href="https://bundlephobia.com/result?p=vue-subslot"><img src="https://badgen.net/bundlephobia/minzip/vue-subslot"></a>
 	<br>
 </p>
