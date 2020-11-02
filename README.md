@@ -28,11 +28,20 @@ npm i vue-subslot
 - **🧠 Full Slot control** Filter out and limit unwanted content from slots!
 - **🐥 Tiny** `1.04 KB` minzipped!
 
-## :beginner: Use case
+## 👨🏻‍🏫 Examples
 Have you ever developed a parent-child component set, and wanted to allow users to pass in the child-component without specifiying a slot but still have the same level of control as named-slots? With Subslot, you can!
 
-### Demo 1: Inline filter attributes&nbsp;&nbsp;[![JSFiddle Demo](https://flat.badgen.net/badge/JSFiddle/Open%20Demo/blue)](https://jsfiddle.net/hirokiosame/6fzeuh97/)
+
+<details>
+    <summary>
+        <strong>Demo 1:</strong> Inline filter attributes
+        <a href="https://jsfiddle.net/hirokiosame/6fzeuh97/"><img align="center" src="https://img.shields.io/badge/JSFiddle-Open%20Demo-blue/?logo=jsfiddle&logoColor=lightblue"></a>
+    </summary>
+
+<br>
+
 Imagine being able to offer the following API with parent-child components _Card_ and _CardHeader_.
+
 ```html
 <card>
 	<!-- The Card Header will be positioned separetely from the content -->
@@ -45,7 +54,8 @@ Imagine being able to offer the following API with parent-child components _Card
 ```
 
 Using Subslot, this is all the code you need to make this possible. This is what _Card.vue_ looks like.
-```vue
+
+```html
 <template>
 	<div class="card">
 		<div class="card-header">
@@ -75,10 +85,20 @@ export default {
 </script>
 ```
 
+</details>
 
-### Demo 2: Defining Subslots&nbsp;&nbsp;[![JSFiddle Demo](https://flat.badgen.net/badge/JSFiddle/Open%20Demo/blue)](https://jsfiddle.net/hirokiosame/tcvp0r98/)
+
+<details>
+    <summary>
+        <strong>Demo 2:</strong> Named Subslots
+        <a href="https://jsfiddle.net/hirokiosame/tcvp0r98/"><img align="center" src="https://img.shields.io/badge/JSFiddle-Open%20Demo-blue/?logo=jsfiddle&logoColor=lightblue"></a>
+    </summary>
+
+<br>
+
 Alternatively to using inline filter attributes, you can define subslots on the component. With this approach, you can access subslots like you would normal slots but via `$subslots`. This is what _Card.vue_ would look like.
-```vue
+
+```html
 <template>
 	<div class="card">
 		<div
@@ -124,6 +144,7 @@ export default {
 </script>
 ```
 
+</details>
 
 ## 📖 API
 
