@@ -4,7 +4,7 @@ import createDefineMixin from './create-define-mixin';
 
 const validInt = value => !Number.isNaN(Number.parseInt(value, 10));
 
-export default {
+const Subslot = {
 	functional: true,
 	props: {
 		not: {
@@ -56,3 +56,5 @@ export default {
 	/* Static method for mixin */
 	define: createDefineMixin,
 };
+
+export default Subslot;
