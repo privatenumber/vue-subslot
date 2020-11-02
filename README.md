@@ -10,7 +10,7 @@
 
 > Use [Subslot](https://npm.im/vue-subslot) in your Vue component to pick and choose what you want from a slot
 
-## :rocket: Installation
+## 🚀 Install
 ```sh
 npm i vue-subslot
 ```
@@ -195,5 +195,9 @@ Like normal slots, what you pass into the slot of `subslot` will be the fallback
 />
 ```
 
-## Related
+## 👨‍👩‍👧 Related
+- [vue-proxi](https://github.com/privatenumber/vue-proxi) - 💠 Tiny proxy component
+- [vue-pseudo-window](https://github.com/privatenumber/vue-pseudo-window) - 🧬 Add attributes and event-listeners to `<slot>` content 💉
 - [vue-pseudo-window](https://github.com/privatenumber/vue-pseudo-window) - 🖼 Declaratively interface window/document in your Vue template
+- [vue-vnode-syringe](https://github.com/privatenumber/vue-v) - render vNodes via component template
+- [vue-frag](https://github.com/privatenumber/vue-frag) - 🤲 Directive to return multiple root elements
