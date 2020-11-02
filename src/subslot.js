@@ -2,9 +2,9 @@ import emit from './utils/emit';
 import filterVnodes from './utils/filter-vnodes';
 import createDefineMixin from './create-define-mixin';
 
-const validInt = (val) => !Number.isNaN(parseInt(val, 10));
+const validInt = value => !Number.isNaN(Number.parseInt(value, 10));
 
-export default {
+const Subslot = {
 	functional: true,
 	props: {
 		not: {
@@ -32,16 +32,12 @@ export default {
 	},
 
 	render(h, ctx) {
-		const { props, parent } = ctx;
+		const {props, parent} = ctx;
 
 		let vnodes;
 
 		// Detect definition
-		if (parent.$subslots) {
-			vnodes = parent.$subslots[props.name];
-		} else {
-			vnodes = props.vnodes || parent.$slots.default || [];
-		}
+		vnodes = parent.$subslots ? parent.$subslots[props.name] : props.vnodes || parent.$slots.default || [];
 
 		vnodes = filterVnodes({
 			vnodes,
@@ -60,3 +56,5 @@ export default {
 	/* Static method for mixin */
 	define: createDefineMixin,
 };
+
+export default Subslot;

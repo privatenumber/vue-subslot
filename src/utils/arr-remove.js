@@ -1,3 +1,3 @@
-const arrRemove = (arr, el) => arr.splice(arr.indexOf(el), 1);
+const arrayRemove = (array, element) => array.splice(array.indexOf(element), 1);
 
-export default arrRemove;
+export default arrayRemove;
