@@ -23,6 +23,11 @@ Pick and choose what you want from a component slot.
 npm i vue-subslot
 ```
 
+## 🙋‍♂️ Why?
+- **🔥 Cleaner Slot API** Give your users a cleaner and more readable API!
+- **🧠 Full Slot control** Filter out and limit unwanted content from slots!
+- **🐥 Tiny** `1.04 KB` minzipped!
+
 ## :beginner: Use case
 Have you ever developed a parent-child component set, and wanted to allow users to pass in the child-component without specifiying a slot but still have the same level of control as named-slots? With Subslot, you can!
 
