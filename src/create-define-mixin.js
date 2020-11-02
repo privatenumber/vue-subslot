@@ -44,27 +44,26 @@ const genSubSlots = ({sslotDef, vnodes, vm}) => {
 		return {};
 	}
 
-	return Object.entries(sslotDef)
-		.reduce((slots, entry) => {
-			const name = entry[0];
-			const def = entry[1];
-			const filtered = filterVnodes({
-				filter: typeof def === 'string' ? parseFilterString(def) : def,
-				vnodes,
-				vm,
-			});
+	const slots = {
+		default: vnodes.slice(0),
+		// _original: vnodes,
+	};
 
-			filtered.forEach(vn => arrRemove(slots.default, vn));
-
-			if (filtered.length) {
-				slots[name] = filtered;
-			}
-
-			return slots;
-		}, {
-			default: vnodes.slice(0),
-			// _original: vnodes,
+	Object.entries(sslotDef).forEach(([name, def]) => {
+		const filtered = filterVnodes({
+			filter: typeof def === 'string' ? parseFilterString(def) : def,
+			vnodes,
+			vm,
 		});
+
+		filtered.forEach(vn => arrRemove(slots.default, vn));
+
+		if (filtered.length > 0) {
+			slots[name] = filtered;
+		}
+	});
+
+	return slots;
 };
 
 export default function createDefineMixin(sslotDef) {
@@ -77,7 +76,6 @@ export default function createDefineMixin(sslotDef) {
 	}
 
 	return {
-		// TODO: Register Subslot component
 		created: generateSubslots,
 		beforeUpdate: generateSubslots,
 	};
