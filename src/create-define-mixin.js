@@ -1,22 +1,28 @@
 import arrRemove from './utils/arr-remove';
 import filterVnodes from './utils/filter-vnodes';
 
-const arrPtrn = /(.+)\[(\d?)(?::(\d+))?\]$/;
-const parseFilterStr = (strFilter) => {
+const arrayPtrn = /(.+)\[(\d?)(?::(\d+))?]$/;
+const parseFilterString = stringFilter => {
 	let not = false;
 	let element;
 	let offset = 0;
 	let limit;
 
-	if (arrPtrn.test(strFilter)) {
-		strFilter = strFilter.replace(arrPtrn, (_, _element, _offset, _limit) => {
+	if (arrayPtrn.test(stringFilter)) {
+		stringFilter = stringFilter.replace(arrayPtrn, (_, _element, _offset, _limit) => {
 			element = _element;
-			if (_offset) { offset = _offset; }
-			if (_limit) { limit = _limit; }
+			if (_offset) {
+				offset = _offset;
+			}
+
+			if (_limit) {
+				limit = _limit;
+			}
+
 			return '';
 		});
 	} else {
-		const filterSplit = strFilter.split(':');
+		const filterSplit = stringFilter.split(':');
 		element = filterSplit[0];
 		limit = filterSplit[1];
 	}
@@ -33,32 +39,32 @@ const parseFilterStr = (strFilter) => {
 	};
 };
 
-const genSubSlots = ({ sslotDef, vnodes, vm }) => {
-	if (!vnodes) { return {}; }
+const genSubSlots = ({sslotDef, vnodes, vm}) => {
+	if (!vnodes) {
+		return {};
+	}
 
-	return Object.entries(sslotDef)
-		.reduce((slots, entry) => {
-			const name = entry[0];
-			const def = entry[1];
-			const filtered = filterVnodes({
-				filter: typeof def === 'string' ? parseFilterStr(def) : def,
-				vnodes,
-				vm,
-			});
+	const slots = {
+		default: vnodes.slice(0),
+		// _original: vnodes,
+	};
 
-			filtered.forEach((vn) => arrRemove(slots.default, vn));
-
-			if (filtered.length) {
-				slots[name] = filtered;
-			}
-
-			return slots;
-		}, {
-			default: vnodes.slice(0),
-			// _original: vnodes,
+	Object.entries(sslotDef).forEach(([name, def]) => {
+		const filtered = filterVnodes({
+			filter: typeof def === 'string' ? parseFilterString(def) : def,
+			vnodes,
+			vm,
 		});
-};
 
+		filtered.forEach(vn => arrRemove(slots.default, vn));
+
+		if (filtered.length > 0) {
+			slots[name] = filtered;
+		}
+	});
+
+	return slots;
+};
 
 export default function createDefineMixin(sslotDef) {
 	function generateSubslots() {
@@ -70,7 +76,6 @@ export default function createDefineMixin(sslotDef) {
 	}
 
 	return {
-		// TODO: Register Subslot component
 		created: generateSubslots,
 		beforeUpdate: generateSubslots,
 	};

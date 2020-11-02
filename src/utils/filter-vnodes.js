@@ -1,10 +1,10 @@
-const getWhitelist = ({ vm, filter }) => {
+const getWhitelist = ({vm, filter}) => {
 	let matchAll = false;
 	const components = [];
 	const tags = [];
 	const elements = Array.isArray(filter.element) ? filter.element : [filter.element];
 
-	elements.forEach((element) => {
+	elements.forEach(element => {
 		if (typeof element === 'string') {
 			if (element === '*') {
 				matchAll = true;
@@ -21,23 +21,23 @@ const getWhitelist = ({ vm, filter }) => {
 		}
 	});
 
-	return { matchAll, components, tags };
+	return {matchAll, components, tags};
 };
 
-const filterVnodes = ({ vnodes, filter, vm }) => {
+const filterVnodes = ({vnodes, filter, vm}) => {
 	if (filter.element) {
-		const { matchAll, components, tags } = getWhitelist({ vm, filter });
-		vnodes = vnodes.filter((vnode) => {
+		const {matchAll, components, tags} = getWhitelist({vm, filter});
+		vnodes = vnodes.filter(vnode => {
 			if (matchAll) {
 				return vnode.tag;
 			}
 
 			const isComponent = (vnode.componentOptions && vnode.componentOptions.Ctor.extendOptions);
-			const { tag } = vnode.componentOptions || vnode;
+			const {tag} = vnode.componentOptions || vnode;
 
 			const elementMatch = (
-				(isComponent && components.includes(isComponent))
-				|| (tag && tags.includes(tag))
+				(isComponent && components.includes(isComponent)) ||
+				(tag && tags.includes(tag))
 			);
 
 			return filter.not ? !elementMatch : elementMatch;
