@@ -1,4 +1,4 @@
-import { mount } from '@vue/test-utils';
+import {mount} from '@vue/test-utils';
 import Vue from 'vue';
 import Subslot from 'vue-subslot';
 import CardHeader from './fixtures/CardHeader.vue';
@@ -94,7 +94,7 @@ describe('$subslots support', () => {
 
 		const usage = {
 			template: '<card>Content</card>',
-			components: { Card },
+			components: {Card},
 		};
 
 		const wrapper = mount(usage);
@@ -127,7 +127,7 @@ describe('$subslots support', () => {
 
 		const usage = {
 			template: '<card>Content</card>',
-			components: { Card },
+			components: {Card},
 		};
 
 		const wrapper = mount(usage);
@@ -176,7 +176,7 @@ describe('$subslots support', () => {
 			},
 
 			data() {
-				return { msg: 'is not reactive' };
+				return {msg: 'is not reactive'};
 			},
 
 			methods: {
@@ -214,7 +214,7 @@ describe('$subslots support', () => {
 			],
 
 			data() {
-				return { msg: 'is not reactive' };
+				return {msg: 'is not reactive'};
 			},
 
 			mounted() {
@@ -464,7 +464,7 @@ describe('$subslots support', () => {
 
 		const usage = {
 			template: '<card>Content</card>',
-			components: { Card },
+			components: {Card},
 		};
 
 		const wrapper = mount(usage);

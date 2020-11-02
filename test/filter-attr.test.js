@@ -1,4 +1,4 @@
-import { mount } from '@vue/test-utils';
+import {mount} from '@vue/test-utils';
 import Subslot from 'vue-subslot';
 import CardHeader from './fixtures/CardHeader.vue';
 
@@ -115,7 +115,7 @@ describe('Subslot', () => {
 					<button>Should render</button>
 				</card>
 			`,
-			components: { Card },
+			components: {Card},
 		};
 
 		const wrapper = mount(usage);
@@ -149,7 +149,7 @@ describe('Subslot', () => {
 					<button>Should render</button>
 				</card>
 			`,
-			components: { Card },
+			components: {Card},
 		};
 
 		const wrapper = mount(usage);
@@ -183,7 +183,7 @@ describe('Subslot', () => {
 					Shouldn't render
 				</card>
 			`,
-			components: { Card },
+			components: {Card},
 		};
 
 		const wrapper = mount(usage);
