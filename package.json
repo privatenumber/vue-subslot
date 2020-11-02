@@ -4,10 +4,13 @@
   "description": "💍 Pick 'n choose what you want from a slot passed into your Vue component",
   "keywords": [
     "vue",
+    "subslot",
     "filter",
+    "pick",
     "slot",
     "vnode",
-    "component"
+    "component",
+    "util"
   ],
   "license": "MIT",
   "repository": "privatenumber/vue-subslot",
