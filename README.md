@@ -13,7 +13,7 @@ Pick and choose what you want from a slot.
 ```html
 <template>
 	<div class="header">
-		<subslot element="h1" /> ⬅ Pick only the `h1` element from <slot />
+		<subslot element="h1" /> ⬅ Pick only the `h1` element from the default slot
 	</div>
 </template>
 ```
