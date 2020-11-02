@@ -8,7 +8,15 @@
 	<br>
 </p>
 
-> Use [Subslot](https://npm.im/vue-subslot) in your Vue component to pick and choose what you want from a slot
+Pick and choose what you want from a slot.
+
+```html
+<template>
+	<div class="header">
+		<subslot element="h1" /> ⬅ Pick only the `h1` element from <slot />
+	</div>
+</template>
+```
 
 ## 🚀 Install
 ```sh
