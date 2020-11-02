@@ -204,6 +204,7 @@ Like normal slots, what you pass into the slot of `subslot` will be the fallback
 ```
 
 ## 👨‍👩‍👧 Related
+- [vue-v](https://github.com/privatenumber/vue-v) - Render vNodes in the template
 - [vue-proxi](https://github.com/privatenumber/vue-proxi) - 💠 Tiny proxy component
 - [vue-pseudo-window](https://github.com/privatenumber/vue-pseudo-window) - 🧬 Add attributes and event-listeners to `<slot>` content 💉
 - [vue-pseudo-window](https://github.com/privatenumber/vue-pseudo-window) - 🖼 Declaratively interface window/document in your Vue template
