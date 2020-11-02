@@ -8,7 +8,7 @@
 	<br>
 </p>
 
-Pick and choose what you want from a slot.
+Pick and choose what you want from a component slot.
 
 ```html
 <template>
