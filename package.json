@@ -22,7 +22,7 @@
   "files": [
     "dist"
   ],
-  "main": "dist/Subslot.js",
+  "main": "dist/subslot.js",
   "scripts": {
     "build": "rollup -c --environment NODE_ENV:production",
     "dev-build": "rollup -cw",

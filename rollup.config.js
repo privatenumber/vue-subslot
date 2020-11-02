@@ -5,7 +5,7 @@ import filesize from 'rollup-plugin-filesize';
 const isProd = process.env.NODE_ENV === 'production';
 
 const rollupConfig = {
-	input: 'src/Subslot.js',
+	input: 'src/subslot.js',
 	plugins: [
 		babel({
 			exclude: 'node_modules/**',
