@@ -11,11 +11,18 @@ const rollupConfig = {
 		isProd && terser(),
 		isProd && filesize(),
 	],
-	output: {
-		dir: 'dist',
-		format: 'umd',
-		name: 'Subslot',
-	},
+	output: [
+		{
+			format: 'umd',
+			file: 'dist/subslot.js',
+			name: 'Subslot',
+			exports: 'default',
+		},
+		{
+			format: 'es',
+			file: 'dist/subslot.esm.js',
+		},
+	],
 };
 
 export default rollupConfig;
