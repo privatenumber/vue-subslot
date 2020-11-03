@@ -1,6 +1,10 @@
 const xoConfig = require('xo/config/plugins');
 
 module.exports = {
+	extensions: ['vue'],
+	extends: [
+		'plugin:vue/recommended',
+	],
 	rules: {
 		'comma-dangle': [
 			'error',
@@ -19,6 +23,19 @@ module.exports = {
 		{
 			files: 'test/*',
 			env: 'jest',
+		},
+		{
+			files: '**/*.vue',
+			rules: {
+				'import/no-anonymous-default-export': ['error', {
+					allowObject: true,
+				}],
+				'unicorn/filename-case': ['error', {
+					cases: {
+						pascalCase: true,
+					},
+				}],
+			},
 		},
 	],
 };
