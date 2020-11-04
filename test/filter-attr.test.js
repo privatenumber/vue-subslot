@@ -299,12 +299,6 @@ describe('Subslot', () => {
 			components: {
 				Subslot,
 			},
-
-			data() {
-				return {
-					CardHeader,
-				};
-			},
 		};
 
 		const wrapper = mount({
