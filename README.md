@@ -233,9 +233,9 @@ Like normal slots, what you pass into the slot of `subslot` will be the fallback
 
 ### Will this work for functional components passed into the slot?
 
-Unfortunately not due to Vue.js' design.
+Unfortunately not due to how functional components are implemented in Vue.js.
 
-Functional components are stateless so they're immediately invoked and the output is passed into the slot instead of the "functional component". Because Subslot doesn't actually receive the functional component, it's impossible to detect them.
+Functional components are stateless and are immediately invoked as a function that outputs vNodes. The outputted vNodes are passed into the slot in place of the functional component. Because Subslot doesn't actually receive the functional component, it's impossible to detect them.
 
 
 ## 👨‍👩‍👧 Related
