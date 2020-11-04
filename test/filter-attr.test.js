@@ -38,7 +38,7 @@ describe('Subslot', () => {
 				CardHeader,
 			},
 		});
-		expect(wrapper.element).toMatchSnapshot();
+		expect(wrapper.html()).toMatchSnapshot();
 	});
 
 	test('Should support element as a direct reference', () => {
@@ -81,7 +81,7 @@ describe('Subslot', () => {
 				CardHeader,
 			},
 		});
-		expect(wrapper.element).toMatchSnapshot();
+		expect(wrapper.html()).toMatchSnapshot();
 	});
 
 	test('Should render all', () => {
@@ -113,7 +113,7 @@ describe('Subslot', () => {
 			`,
 			components: {Card},
 		});
-		expect(wrapper.element).toMatchSnapshot();
+		expect(wrapper.html()).toMatchSnapshot();
 	});
 
 	test('Should support tag', () => {
@@ -145,7 +145,7 @@ describe('Subslot', () => {
 			`,
 			components: {Card},
 		});
-		expect(wrapper.element).toMatchSnapshot();
+		expect(wrapper.html()).toMatchSnapshot();
 	});
 
 	test('Should support wildcard', () => {
@@ -177,7 +177,7 @@ describe('Subslot', () => {
 			`,
 			components: {Card},
 		});
-		expect(wrapper.element).toMatchSnapshot();
+		expect(wrapper.html()).toMatchSnapshot();
 	});
 
 	test('Should only be 3 CardHeaders', () => {
@@ -213,7 +213,7 @@ describe('Subslot', () => {
 				CardHeader,
 			},
 		});
-		expect(wrapper.element).toMatchSnapshot();
+		expect(wrapper.html()).toMatchSnapshot();
 	});
 
 	test('Should enforce offset of 3', () => {
@@ -250,7 +250,7 @@ describe('Subslot', () => {
 				CardHeader,
 			},
 		});
-		expect(wrapper.element).toMatchSnapshot();
+		expect(wrapper.html()).toMatchSnapshot();
 	});
 
 	test('Should enforce offset and limit without element', () => {
@@ -285,7 +285,7 @@ describe('Subslot', () => {
 				Card,
 			},
 		});
-		expect(wrapper.element).toMatchSnapshot();
+		expect(wrapper.html()).toMatchSnapshot();
 	});
 
 	test('Should support tag', () => {

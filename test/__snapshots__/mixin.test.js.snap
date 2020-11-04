@@ -1,331 +1,196 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`$subslots support Empty slot 1`] = `
-<div
-  class="card"
->
+"<div class=\\"card\\">
   <!---->
-</div>
+</div>"
 `;
 
 exports[`$subslots support Fallback reactive 1`] = `
-<div
-  class="card"
->
-  
-						Fallback is reactive!
-					
-</div>
+"<div class=\\"card\\">
+  Fallback is reactive!
+</div>"
 `;
 
 exports[`$subslots support Normal usage 1`] = `
-<div
-  class="card"
->
-  <div
-    class="card-header"
-  >
+"<div class=\\"card\\">
+  <div class=\\"card-header\\">
     <div>
-      
-						Header
-					
+      Header
     </div>
   </div>
-   
-  <div
-    class="card-content"
-  >
-    
+  <div class=\\"card-content\\">
 
-					Content
+    Content
 
-					
   </div>
-   
-  <div
-    class="card-footer"
-  >
+  <div class=\\"card-footer\\">
     <div>
-      
-						Footer
-					
+      Footer
     </div>
   </div>
-</div>
+</div>"
 `;
 
 exports[`$subslots support Reactive subslots 1`] = `
-<div
-  class="card"
->
-  <div
-    class="card-header"
-  >
+"<div class=\\"card\\">
+  <div class=\\"card-header\\">
     <div>
-      
-						Header is reactive!
-					
+      Header is reactive!
     </div>
   </div>
-   
-  <div
-    class="card-content"
-  >
-    
+  <div class=\\"card-content\\">
 
-					Content is reactive!
-				
+    Content is reactive!
   </div>
-</div>
+</div>"
 `;
 
 exports[`$subslots support Should emit "no-match" on no match 1`] = `
-<div
-  class="card"
->
-  <div
-    class="card-header"
-  >
+"<div class=\\"card\\">
+  <div class=\\"card-header\\">
     <!---->
   </div>
-</div>
+</div>"
 `;
 
 exports[`$subslots support Should support define w/ attributes 1`] = `
-<div
-  class="card"
->
-  <div
-    class="card-header"
-  >
+"<div class=\\"card\\">
+  <div class=\\"card-header\\">
     <div>
-      
-						Header 2
-					
+      Header 2
     </div>
     <div>
-      
-						Header 3
-					
+      Header 3
     </div>
   </div>
-   
-  <div
-    class="card-content"
-  >
+  <div class=\\"card-content\\">
     <!---->
   </div>
-</div>
+</div>"
 `;
 
 exports[`$subslots support Should support slice index 1`] = `
-<div
-  class="card"
->
-  <div
-    class="card-header"
-  >
+"<div class=\\"card\\">
+  <div class=\\"card-header\\">
     <div>
-      
-						Header 3
-					
+      Header 3
     </div>
     <div>
-      
-						Header 4
-					
+      Header 4
     </div>
     <div>
-      
-						Header 5
-					
+      Header 5
     </div>
     <div>
-      
-						Header 6
-					
+      Header 6
     </div>
     <div>
-      
-						Header 7
-					
+      Header 7
     </div>
     <div>
-      
-						Header 8
-					
+      Header 8
     </div>
     <div>
-      
-						Header 9
-					
+      Header 9
     </div>
     <div>
-      
-						Header 10
-					
+      Header 10
     </div>
   </div>
-   
-  <div
-    class="card-content"
-  >
+  <div class=\\"card-content\\">
     <div>
-      
-						Header 1
-					
+      Header 1
     </div>
     <div>
-      
-						Header 2
-					
+      Header 2
     </div>
   </div>
-</div>
+</div>"
 `;
 
 exports[`$subslots support Should support slice with limit 1`] = `
-<div
-  class="card"
->
-  <div
-    class="card-header"
-  >
+"<div class=\\"card\\">
+  <div class=\\"card-header\\">
     <div>
-      
-						Header 3
-					
+      Header 3
     </div>
     <div>
-      
-						Header 4
-					
+      Header 4
     </div>
   </div>
-   
-  <div
-    class="card-content"
-  >
+  <div class=\\"card-content\\">
     <div>
-      
-						Header 1
-					
+      Header 1
     </div>
     <div>
-      
-						Header 2
-					
+      Header 2
     </div>
     <div>
-      
-						Header 5
-					
+      Header 5
     </div>
     <div>
-      
-						Header 6
-					
+      Header 6
     </div>
     <div>
-      
-						Header 7
-					
+      Header 7
     </div>
     <div>
-      
-						Header 8
-					
+      Header 8
     </div>
     <div>
-      
-						Header 9
-					
+      Header 9
     </div>
     <div>
-      
-						Header 10
-					
+      Header 10
     </div>
   </div>
-</div>
+</div>"
 `;
 
 exports[`$subslots support Should support slice with no offset 1`] = `
-<div
-  class="card"
->
-  <div
-    class="card-header"
-  >
+"<div class=\\"card\\">
+  <div class=\\"card-header\\">
     <div>
-      
-						Header 1
-					
+      Header 1
     </div>
     <div>
-      
-						Header 2
-					
+      Header 2
     </div>
   </div>
-   
-  <div
-    class="card-content"
-  >
+  <div class=\\"card-content\\">
     <div>
-      
-						Header 3
-					
+      Header 3
     </div>
     <div>
-      
-						Header 4
-					
+      Header 4
     </div>
     <div>
-      
-						Header 5
-					
+      Header 5
     </div>
     <div>
-      
-						Header 6
-					
+      Header 6
     </div>
     <div>
-      
-						Header 7
-					
+      Header 7
     </div>
     <div>
-      
-						Header 8
-					
+      Header 8
     </div>
     <div>
-      
-						Header 9
-					
+      Header 9
     </div>
     <div>
-      
-						Header 10
-					
+      Header 10
     </div>
   </div>
-</div>
+</div>"
 `;
 
 exports[`$subslots support Should use fallback 1`] = `
-<div
-  class="card"
->
-  <div
-    class="card-header"
-  >
-    
-							Fallback
-						
+"<div class=\\"card\\">
+  <div class=\\"card-header\\">
+    Fallback
   </div>
-</div>
+</div>"
 `;

@@ -62,7 +62,7 @@ describe('$subslots support', () => {
 				CardFooter,
 			},
 		});
-		expect(wrapper.element).toMatchSnapshot();
+		expect(wrapper.html()).toMatchSnapshot();
 	});
 
 	test('Empty slot', () => {
@@ -94,7 +94,7 @@ describe('$subslots support', () => {
 			template: '<card>Content</card>',
 			components: {Card},
 		});
-		expect(wrapper.element).toMatchSnapshot();
+		expect(wrapper.html()).toMatchSnapshot();
 	});
 
 	test('Should use fallback', () => {
@@ -125,7 +125,7 @@ describe('$subslots support', () => {
 			template: '<card>Content</card>',
 			components: {Card},
 		});
-		expect(wrapper.element).toMatchSnapshot();
+		expect(wrapper.html()).toMatchSnapshot();
 	});
 
 	test('Reactive subslots', async () => {
@@ -181,7 +181,7 @@ describe('$subslots support', () => {
 		});
 		wrapper.vm.increment();
 		await Vue.nextTick();
-		expect(wrapper.element).toMatchSnapshot();
+		expect(wrapper.html()).toMatchSnapshot();
 	});
 
 	test('Fallback reactive', async () => {
@@ -226,7 +226,7 @@ describe('$subslots support', () => {
 			},
 		});
 		await Vue.nextTick();
-		expect(wrapper.element).toMatchSnapshot();
+		expect(wrapper.html()).toMatchSnapshot();
 	});
 
 	test('Should support slice index', () => {
@@ -272,7 +272,7 @@ describe('$subslots support', () => {
 				CardFooter,
 			},
 		});
-		expect(wrapper.element).toMatchSnapshot();
+		expect(wrapper.html()).toMatchSnapshot();
 	});
 
 	test('Should support slice with limit', () => {
@@ -318,7 +318,7 @@ describe('$subslots support', () => {
 				CardFooter,
 			},
 		});
-		expect(wrapper.element).toMatchSnapshot();
+		expect(wrapper.html()).toMatchSnapshot();
 	});
 
 	test('Should support slice with no offset', () => {
@@ -364,7 +364,7 @@ describe('$subslots support', () => {
 				CardFooter,
 			},
 		});
-		expect(wrapper.element).toMatchSnapshot();
+		expect(wrapper.html()).toMatchSnapshot();
 	});
 
 	test('Should support define w/ attributes', () => {
@@ -410,7 +410,7 @@ describe('$subslots support', () => {
 				CardHeader,
 			},
 		});
-		expect(wrapper.element).toMatchSnapshot();
+		expect(wrapper.html()).toMatchSnapshot();
 	});
 
 	test('Should emit "no-match" on no match', () => {
@@ -449,6 +449,6 @@ describe('$subslots support', () => {
 			components: {Card},
 		});
 		expect(onNoCardHeader).toBeCalled();
-		expect(wrapper.element).toMatchSnapshot();
+		expect(wrapper.html()).toMatchSnapshot();
 	});
 });
