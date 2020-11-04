@@ -10,7 +10,4 @@ module.exports = {
 		'\\.vue$': 'vue-jest',
 		'\\.js$': 'babel-jest',
 	},
-	snapshotSerializers: [
-		'jest-serializer-vue',
-	],
 };
