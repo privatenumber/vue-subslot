@@ -1,4 +1,4 @@
-import { mount } from '@vue/test-utils';
+import {mount} from '@vue/test-utils';
 import Vue from 'vue';
 import Subslot from 'vue-subslot';
 import CardHeader from './fixtures/CardHeader.vue';
@@ -42,7 +42,7 @@ describe('$subslots support', () => {
 			],
 		};
 
-		const usage = {
+		const wrapper = mount({
 			template: `
 				<card>
 					<card-header>
@@ -61,10 +61,8 @@ describe('$subslots support', () => {
 				CardHeader,
 				CardFooter,
 			},
-		};
-
-		const wrapper = mount(usage);
-		expect(wrapper.element).toMatchSnapshot();
+		});
+		expect(wrapper.html()).toMatchSnapshot();
 	});
 
 	test('Empty slot', () => {
@@ -92,13 +90,11 @@ describe('$subslots support', () => {
 			],
 		};
 
-		const usage = {
+		const wrapper = mount({
 			template: '<card>Content</card>',
-			components: { Card },
-		};
-
-		const wrapper = mount(usage);
-		expect(wrapper.element).toMatchSnapshot();
+			components: {Card},
+		});
+		expect(wrapper.html()).toMatchSnapshot();
 	});
 
 	test('Should use fallback', () => {
@@ -125,13 +121,11 @@ describe('$subslots support', () => {
 			],
 		};
 
-		const usage = {
+		const wrapper = mount({
 			template: '<card>Content</card>',
-			components: { Card },
-		};
-
-		const wrapper = mount(usage);
-		expect(wrapper.element).toMatchSnapshot();
+			components: {Card},
+		});
+		expect(wrapper.html()).toMatchSnapshot();
 	});
 
 	test('Reactive subslots', async () => {
@@ -159,7 +153,7 @@ describe('$subslots support', () => {
 			],
 		};
 
-		const usage = {
+		const wrapper = mount({
 			template: `
 				<card>
 					<card-header>
@@ -176,7 +170,7 @@ describe('$subslots support', () => {
 			},
 
 			data() {
-				return { msg: 'is not reactive' };
+				return {msg: 'is not reactive'};
 			},
 
 			methods: {
@@ -184,12 +178,10 @@ describe('$subslots support', () => {
 					this.msg = 'is reactive!';
 				},
 			},
-		};
-
-		const wrapper = mount(usage);
+		});
 		wrapper.vm.increment();
 		await Vue.nextTick();
-		expect(wrapper.element).toMatchSnapshot();
+		expect(wrapper.html()).toMatchSnapshot();
 	});
 
 	test('Fallback reactive', async () => {
@@ -214,7 +206,7 @@ describe('$subslots support', () => {
 			],
 
 			data() {
-				return { msg: 'is not reactive' };
+				return {msg: 'is not reactive'};
 			},
 
 			mounted() {
@@ -222,7 +214,7 @@ describe('$subslots support', () => {
 			},
 		};
 
-		const usage = {
+		const wrapper = mount({
 			template: `
 			<card>
 				Content
@@ -232,11 +224,9 @@ describe('$subslots support', () => {
 				Card,
 				CardHeader,
 			},
-		};
-
-		const wrapper = mount(usage);
+		});
 		await Vue.nextTick();
-		expect(wrapper.element).toMatchSnapshot();
+		expect(wrapper.html()).toMatchSnapshot();
 	});
 
 	test('Should support slice index', () => {
@@ -265,7 +255,7 @@ describe('$subslots support', () => {
 			],
 		};
 
-		const usage = {
+		const wrapper = mount({
 			template: `
 				<card>
 					<card-header
@@ -281,10 +271,8 @@ describe('$subslots support', () => {
 				CardHeader,
 				CardFooter,
 			},
-		};
-
-		const wrapper = mount(usage);
-		expect(wrapper.element).toMatchSnapshot();
+		});
+		expect(wrapper.html()).toMatchSnapshot();
 	});
 
 	test('Should support slice with limit', () => {
@@ -313,7 +301,7 @@ describe('$subslots support', () => {
 			],
 		};
 
-		const usage = {
+		const wrapper = mount({
 			template: `
 				<card>
 					<card-header
@@ -329,10 +317,8 @@ describe('$subslots support', () => {
 				CardHeader,
 				CardFooter,
 			},
-		};
-
-		const wrapper = mount(usage);
-		expect(wrapper.element).toMatchSnapshot();
+		});
+		expect(wrapper.html()).toMatchSnapshot();
 	});
 
 	test('Should support slice with no offset', () => {
@@ -361,7 +347,7 @@ describe('$subslots support', () => {
 			],
 		};
 
-		const usage = {
+		const wrapper = mount({
 			template: `
 				<card>
 					<card-header
@@ -377,10 +363,8 @@ describe('$subslots support', () => {
 				CardHeader,
 				CardFooter,
 			},
-		};
-
-		const wrapper = mount(usage);
-		expect(wrapper.element).toMatchSnapshot();
+		});
+		expect(wrapper.html()).toMatchSnapshot();
 	});
 
 	test('Should support define w/ attributes', () => {
@@ -410,7 +394,7 @@ describe('$subslots support', () => {
 			],
 		};
 
-		const usage = {
+		const wrapper = mount({
 			template: `
 				<card>
 					<card-header
@@ -425,10 +409,8 @@ describe('$subslots support', () => {
 				Card,
 				CardHeader,
 			},
-		};
-
-		const wrapper = mount(usage);
-		expect(wrapper.element).toMatchSnapshot();
+		});
+		expect(wrapper.html()).toMatchSnapshot();
 	});
 
 	test('Should emit "no-match" on no match', () => {
@@ -462,13 +444,11 @@ describe('$subslots support', () => {
 			},
 		};
 
-		const usage = {
+		const wrapper = mount({
 			template: '<card>Content</card>',
-			components: { Card },
-		};
-
-		const wrapper = mount(usage);
+			components: {Card},
+		});
 		expect(onNoCardHeader).toBeCalled();
-		expect(wrapper.element).toMatchSnapshot();
+		expect(wrapper.html()).toMatchSnapshot();
 	});
 });

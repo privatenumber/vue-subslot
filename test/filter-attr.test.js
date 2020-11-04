@@ -1,4 +1,4 @@
-import { mount } from '@vue/test-utils';
+import {mount} from '@vue/test-utils';
 import Subslot from 'vue-subslot';
 import CardHeader from './fixtures/CardHeader.vue';
 
@@ -23,7 +23,7 @@ describe('Subslot', () => {
 			},
 		};
 
-		const usage = {
+		const wrapper = mount({
 			template: `
 				<card>
 					<card-header>
@@ -37,10 +37,8 @@ describe('Subslot', () => {
 				Card,
 				CardHeader,
 			},
-		};
-
-		const wrapper = mount(usage);
-		expect(wrapper.element).toMatchSnapshot();
+		});
+		expect(wrapper.html()).toMatchSnapshot();
 	});
 
 	test('Should support element as a direct reference', () => {
@@ -68,7 +66,7 @@ describe('Subslot', () => {
 			},
 		};
 
-		const usage = {
+		const wrapper = mount({
 			template: `
 				<card>
 					<card-header>
@@ -82,10 +80,8 @@ describe('Subslot', () => {
 				Card,
 				CardHeader,
 			},
-		};
-
-		const wrapper = mount(usage);
-		expect(wrapper.element).toMatchSnapshot();
+		});
+		expect(wrapper.html()).toMatchSnapshot();
 	});
 
 	test('Should render all', () => {
@@ -107,7 +103,7 @@ describe('Subslot', () => {
 			},
 		};
 
-		const usage = {
+		const wrapper = mount({
 			template: `
 				<card>
 					<div>Should render</div>
@@ -115,11 +111,9 @@ describe('Subslot', () => {
 					<button>Should render</button>
 				</card>
 			`,
-			components: { Card },
-		};
-
-		const wrapper = mount(usage);
-		expect(wrapper.element).toMatchSnapshot();
+			components: {Card},
+		});
+		expect(wrapper.html()).toMatchSnapshot();
 	});
 
 	test('Should support tag', () => {
@@ -141,7 +135,7 @@ describe('Subslot', () => {
 			},
 		};
 
-		const usage = {
+		const wrapper = mount({
 			template: `
 				<card>
 					<div>Shouldn't render</div>
@@ -149,11 +143,9 @@ describe('Subslot', () => {
 					<button>Should render</button>
 				</card>
 			`,
-			components: { Card },
-		};
-
-		const wrapper = mount(usage);
-		expect(wrapper.element).toMatchSnapshot();
+			components: {Card},
+		});
+		expect(wrapper.html()).toMatchSnapshot();
 	});
 
 	test('Should support wildcard', () => {
@@ -175,7 +167,7 @@ describe('Subslot', () => {
 			},
 		};
 
-		const usage = {
+		const wrapper = mount({
 			template: `
 				<card>
 					Shouldn't render
@@ -183,11 +175,9 @@ describe('Subslot', () => {
 					Shouldn't render
 				</card>
 			`,
-			components: { Card },
-		};
-
-		const wrapper = mount(usage);
-		expect(wrapper.element).toMatchSnapshot();
+			components: {Card},
+		});
+		expect(wrapper.html()).toMatchSnapshot();
 	});
 
 	test('Should only be 3 CardHeaders', () => {
@@ -207,7 +197,7 @@ describe('Subslot', () => {
 			},
 		};
 
-		const usage = {
+		const wrapper = mount({
 			template: `
 				<card>
 					<card-header
@@ -222,10 +212,8 @@ describe('Subslot', () => {
 				Card,
 				CardHeader,
 			},
-		};
-
-		const wrapper = mount(usage);
-		expect(wrapper.element).toMatchSnapshot();
+		});
+		expect(wrapper.html()).toMatchSnapshot();
 	});
 
 	test('Should enforce offset of 3', () => {
@@ -246,7 +234,7 @@ describe('Subslot', () => {
 			},
 		};
 
-		const usage = {
+		const wrapper = mount({
 			template: `
 				<card>
 					<card-header
@@ -261,10 +249,8 @@ describe('Subslot', () => {
 				Card,
 				CardHeader,
 			},
-		};
-
-		const wrapper = mount(usage);
-		expect(wrapper.element).toMatchSnapshot();
+		});
+		expect(wrapper.html()).toMatchSnapshot();
 	});
 
 	test('Should enforce offset and limit without element', () => {
@@ -284,7 +270,7 @@ describe('Subslot', () => {
 			},
 		};
 
-		const usage = {
+		const wrapper = mount({
 			template: `
 				<card>
 					<div
@@ -298,9 +284,35 @@ describe('Subslot', () => {
 			components: {
 				Card,
 			},
+		});
+		expect(wrapper.html()).toMatchSnapshot();
+	});
+
+	test('Should support tag', () => {
+		const Card = {
+			template: `
+				<div class="card">
+					<subslot not element="*" />
+				</div>
+			`,
+
+			components: {
+				Subslot,
+			},
 		};
 
-		const wrapper = mount(usage);
-		expect(wrapper.element).toMatchSnapshot();
+		const wrapper = mount({
+			template: `
+				<card>
+					Should render
+					<div>Shouldn't render</div>
+					<span>Shouldn't render</span>
+					<button>Shouldn't render</button>
+				</card>
+			`,
+			components: {Card},
+		});
+
+		expect(wrapper.html()).toMatchSnapshot();
 	});
 });

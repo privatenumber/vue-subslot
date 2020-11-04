@@ -4,22 +4,44 @@
 	<br><br>
 	<a href="https://npm.im/vue-subslot"><img src="https://badgen.net/npm/v/vue-subslot"></a>
 	<a href="https://npm.im/vue-subslot"><img src="https://badgen.net/npm/dm/vue-subslot"></a>
-	<a href="https://packagephobia.now.sh/result?p=vue-subslot"><img src="https://packagephobia.now.sh/badge?p=vue-subslot"></a>
+	<a href="https://bundlephobia.com/result?p=vue-subslot"><img src="https://badgen.net/bundlephobia/minzip/vue-subslot"></a>
 	<br>
 </p>
 
-> Use [Subslot](https://npm.im/vue-subslot) in your Vue component to pick and choose what you want from a slot
+Pick out specific elements from the component `<slot>`.
 
-## :rocket: Installation
+```html
+<template>
+	<div class="header">
+		<subslot element="h1" /> ⬅ Pick only the `h1` element from the default slot
+	</div>
+</template>
+```
+
+## 🚀 Install
 ```sh
 npm i vue-subslot
 ```
 
-## :beginner: Use case
+## 🙋‍♂️ Why?
+- **🔥 Cleaner Slot API** Give your users a cleaner and more readable API!
+- **🧠 Full Slot control** Filter out and limit unwanted content from slots!
+- **🐥 Tiny** `1.04 KB` minzipped!
+
+## 👨🏻‍🏫 Examples
 Have you ever developed a parent-child component set, and wanted to allow users to pass in the child-component without specifiying a slot but still have the same level of control as named-slots? With Subslot, you can!
 
-### Demo 1: Inline filter attributes&nbsp;&nbsp;[![JSFiddle Demo](https://flat.badgen.net/badge/JSFiddle/Open%20Demo/blue)](https://jsfiddle.net/hirokiosame/6fzeuh97/)
+
+<details>
+    <summary>
+        <strong>Demo 1:</strong> Inline filter attributes
+        <a href="https://jsfiddle.net/hirokiosame/6fzeuh97/"><img align="center" src="https://img.shields.io/badge/JSFiddle-Open%20Demo-blue/?logo=jsfiddle&logoColor=lightblue"></a>
+    </summary>
+
+<br>
+
 Imagine being able to offer the following API with parent-child components _Card_ and _CardHeader_.
+
 ```html
 <card>
 	<!-- The Card Header will be positioned separetely from the content -->
@@ -32,7 +54,8 @@ Imagine being able to offer the following API with parent-child components _Card
 ```
 
 Using Subslot, this is all the code you need to make this possible. This is what _Card.vue_ looks like.
-```vue
+
+```html
 <template>
 	<div class="card">
 		<div class="card-header">
@@ -62,10 +85,20 @@ export default {
 </script>
 ```
 
+</details>
 
-### Demo 2: Defining Subslots&nbsp;&nbsp;[![JSFiddle Demo](https://flat.badgen.net/badge/JSFiddle/Open%20Demo/blue)](https://jsfiddle.net/hirokiosame/tcvp0r98/)
+
+<details>
+    <summary>
+        <strong>Demo 2:</strong> Named Subslots
+        <a href="https://jsfiddle.net/hirokiosame/tcvp0r98/"><img align="center" src="https://img.shields.io/badge/JSFiddle-Open%20Demo-blue/?logo=jsfiddle&logoColor=lightblue"></a>
+    </summary>
+
+<br>
+
 Alternatively to using inline filter attributes, you can define subslots on the component. With this approach, you can access subslots like you would normal slots but via `$subslots`. This is what _Card.vue_ would look like.
-```vue
+
+```html
 <template>
 	<div class="card">
 		<div
@@ -111,10 +144,11 @@ export default {
 </script>
 ```
 
+</details>
 
-## :book: API
+## 📖 API
 
-### Filter by element tag
+#### Filter by element tag
 As a string, it filters the vnodes by tag (as opposed to component)
 ```html
 <subslot element="div" />
@@ -125,7 +159,7 @@ Filter the vnodes with tag `child-component`
 <subslot element="ChildComponent" />
 ```
 
-### To match a specific component
+#### To match a specific component
 Use the `@` prefix to use the component from the `components` hash
 ```html
 <subslot element="@ChildComponent" />
@@ -136,21 +170,21 @@ Or, pass in the direct Component reference
 <subslot :element="ChildComponent" />
 ```
 
-### To match multiple elements
+#### To match multiple elements
 Pass in an array
 
 ```html
 <subslot :element="[ChildComponentA, '@ChildComponentB', 'div']" />
 ```
 
-### To match any element
+#### To match any element
 Use the asterisk to match any element. This is to match only elements and remove any text/white-space.
 
 ```html
 <subslot element="*" />
 ```
 
-### Offset the number of returned elements
+#### Offset the number of returned elements
 ```html
 <subslot
 	element="ChildComponent"
@@ -158,7 +192,7 @@ Use the asterisk to match any element. This is to match only elements and remove
 />
 ```
 
-### Limit the number of returned elements
+#### Limit the number of returned elements
 ```html
 <subslot
 	element="ChildComponent"
@@ -167,13 +201,13 @@ Use the asterisk to match any element. This is to match only elements and remove
 />
 ```
 
-### Inverse the filter
+#### Inverse the filter
 Set the `not` boolean to inverse the filter and get everything that _doesn't_ match.
 ```html
 <subslot not element="@ChildComponent" />
 ```
 
-### Slot fallback
+#### Slot fallback
 Like normal slots, what you pass into the slot of `subslot` will be the fallback content of that `subslot`.
 ```html
 <subslot name="banner">
@@ -181,11 +215,11 @@ Like normal slots, what you pass into the slot of `subslot` will be the fallback
 </subslot>
 ```
 
-## :loop: Events
+## 📬 Events
 - `@no-match`: Emitted when there are no matching vnodes
 
 
-## :zap: Advanced usage
+## ⚡ Advanced usage
 
 ### Pass in vnodes from a difference source
 ```html
@@ -195,5 +229,18 @@ Like normal slots, what you pass into the slot of `subslot` will be the fallback
 />
 ```
 
-## Related
+## 💁‍♀️ FAQ
+
+### Will this work for functional components passed into the slot?
+
+Unfortunately not due to how functional components are implemented in Vue.js.
+
+Functional components are stateless and are immediately invoked as a function that outputs vNodes. The outputted vNodes are passed into the slot in place of the functional component. Because Subslot doesn't actually receive the functional component, it's impossible to detect them.
+
+
+## 👨‍👩‍👧 Related
+- [vue-proxi](https://github.com/privatenumber/vue-proxi) - 💠 Tiny proxy component
+- [vue-vnode-syringe](https://github.com/privatenumber/vue-vnode-syringe) - 🧬 Add attributes and event-listeners to `<slot>` content 💉
 - [vue-pseudo-window](https://github.com/privatenumber/vue-pseudo-window) - 🖼 Declaratively interface window/document in your Vue template
+- [vue-v](https://github.com/privatenumber/vue-v) - render vNodes via component template
+- [vue-frag](https://github.com/privatenumber/vue-frag) - 🤲 Directive to return multiple root elements

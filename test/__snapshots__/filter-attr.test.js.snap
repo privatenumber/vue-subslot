@@ -1,153 +1,87 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Subslot Should enforce offset and limit without element 1`] = `
-<div>
+"<div>
   <div>
-    
-						Header 4
-					
+    Header 4
   </div>
   <div>
-    
-						Header 5
-					
+    Header 5
   </div>
   <div>
-    
-						Header 6
-					
+    Header 6
   </div>
-</div>
+</div>"
 `;
 
 exports[`Subslot Should enforce offset of 3 1`] = `
-<div
-  class="card"
->
+"<div class=\\"card\\">
   <div>
-    
-						Header 4
-					
+    Header 4
   </div>
   <div>
-    
-						Header 5
-					
+    Header 5
   </div>
   <div>
-    
-						Header 6
-					
+    Header 6
   </div>
-</div>
+</div>"
 `;
 
 exports[`Subslot Should only be 3 CardHeaders 1`] = `
-<div
-  class="card"
->
+"<div class=\\"card\\">
   <div>
-    
-						Header
-					
+    Header
   </div>
   <div>
-    
-						Header
-					
+    Header
   </div>
   <div>
-    
-						Header
-					
+    Header
   </div>
-</div>
+</div>"
 `;
 
 exports[`Subslot Should render all 1`] = `
-<div
-  class="card"
->
-  <div>
-    Should render
-  </div>
-   
-  <span>
-    Should render
-  </span>
-   
-  <button>
-    Should render
-  </button>
-</div>
+"<div class=\\"card\\">
+  <div>Should render</div> <span>Should render</span> <button>Should render</button>
+</div>"
 `;
 
 exports[`Subslot Should support element as a direct reference 1`] = `
-<div
-  class="card"
->
-  <div
-    class="card-header"
-  >
+"<div class=\\"card\\">
+  <div class=\\"card-header\\">
     <div>
-      
-						Header
-					
+      Header
     </div>
   </div>
-   
-  <div
-    class="card-content"
-  >
-    
+  <div class=\\"card-content\\">
 
-					Content
-				
+    Content
   </div>
-</div>
+</div>"
 `;
 
 exports[`Subslot Should support filter attributes 1`] = `
-<div
-  class="card"
->
-  <div
-    class="card-header"
-  >
+"<div class=\\"card\\">
+  <div class=\\"card-header\\">
     <div>
-      
-						Header
-					
+      Header
     </div>
   </div>
-   
-  <div
-    class="card-content"
-  >
-    
+  <div class=\\"card-content\\">
 
-					Content
-				
+    Content
   </div>
-</div>
+</div>"
 `;
 
-exports[`Subslot Should support tag 1`] = `
-<div
-  class="card"
->
-  <button>
-    Should render
-  </button>
-</div>
+exports[`Subslot Should support tag 1`] = `"<div class=\\"card\\"><button>Should render</button></div>"`;
+
+exports[`Subslot Should support tag 2`] = `
+"<div class=\\"card\\">
+  Should render
+</div>"
 `;
 
-exports[`Subslot Should support wildcard 1`] = `
-<div
-  class="card"
->
-  <span>
-    Should render
-  </span>
-</div>
-`;
+exports[`Subslot Should support wildcard 1`] = `"<div class=\\"card\\"><span>Should render</span></div>"`;
