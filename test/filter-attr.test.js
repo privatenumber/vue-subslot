@@ -287,4 +287,32 @@ describe('Subslot', () => {
 		});
 		expect(wrapper.element).toMatchSnapshot();
 	});
+
+	test('Should support tag', () => {
+		const Card = {
+			template: `
+				<div class="card">
+					<subslot not element="*" />
+				</div>
+			`,
+
+			components: {
+				Subslot,
+			},
+		};
+
+		const wrapper = mount({
+			template: `
+				<card>
+					Should render
+					<div>Shouldn't render</div>
+					<span>Shouldn't render</span>
+					<button>Shouldn't render</button>
+				</card>
+			`,
+			components: {Card},
+		});
+
+		expect(wrapper.html()).toMatchSnapshot();
+	});
 });

@@ -27,20 +27,19 @@ const getWhitelist = ({vm, filter}) => {
 const filterVnodes = ({vnodes, filter, vm}) => {
 	if (filter.element) {
 		const {matchAll, components, tags} = getWhitelist({vm, filter});
+
 		vnodes = vnodes.filter(vnode => {
+			let hasMatch;
+			const {tag} = vnode;
+
 			if (matchAll) {
-				return vnode.tag;
+				hasMatch = tag;
+			} else if (tag) {
+				const isComponent = (vnode.componentOptions && vnode.componentOptions.Ctor.extendOptions);
+				hasMatch = isComponent ? components.includes(isComponent) : tags.includes(tag);
 			}
 
-			const isComponent = (vnode.componentOptions && vnode.componentOptions.Ctor.extendOptions);
-			const {tag} = vnode.componentOptions || vnode;
-
-			const elementMatch = (
-				(isComponent && components.includes(isComponent)) ||
-				(tag && tags.includes(tag))
-			);
-
-			return filter.not ? !elementMatch : elementMatch;
+			return filter.not ? !hasMatch : hasMatch;
 		});
 	}
 
