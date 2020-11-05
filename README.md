@@ -150,22 +150,26 @@ export default {
 
 #### Filter by element tag
 As a string, it filters the vnodes by tag (as opposed to component)
+
 ```html
 <subslot element="div" />
 ```
 
 Filter the vnodes with tag `child-component`
+
 ```html
 <subslot element="ChildComponent" />
 ```
 
 #### To match a specific component
 Use the `@` prefix to use the component from the `components` hash
+
 ```html
 <subslot element="@ChildComponent" />
 ```
 
 Or, pass in the direct Component reference
+
 ```html
 <subslot :element="ChildComponent" />
 ```
@@ -178,7 +182,7 @@ Pass in an array
 ```
 
 #### To match any element
-Use the asterisk to match any element. This is to match only elements and remove any text/white-space.
+Use the asterisk to match any element (incl. components). This can be used to filter out text/white-space.
 
 ```html
 <subslot element="*" />
@@ -203,12 +207,21 @@ Use the asterisk to match any element. This is to match only elements and remove
 
 #### Inverse the filter
 Set the `not` boolean to inverse the filter and get everything that _doesn't_ match.
+
 ```html
 <subslot not element="@ChildComponent" />
 ```
 
+#### Text only
+Inverse the element match-all to match only text nodes.
+
+```html
+<subslot not element="*" />
+```
+
 #### Slot fallback
 Like normal slots, what you pass into the slot of `subslot` will be the fallback content of that `subslot`.
+
 ```html
 <subslot name="banner">
 	<default-banner />
